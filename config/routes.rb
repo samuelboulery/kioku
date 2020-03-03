@@ -2,14 +2,14 @@ Rails.application.routes.draw do
   devise_for :photographers, path: "photographers"
   devise_for :schools, path: "schools"
 
-  namespace :photographers do
+  namespace :professional do
     resources :schools, only: [:index, :show] do
       resources :classrooms, only: [:new, :create]
     end
     resources :classrooms, only: [:show, :edit, :update]
   end
 
-  namespace :schools do #root path perso (school/controller/action/show)
+  namespace :director do #root path perso (school/controller/action/show)
     resources :classrooms, only: :show do
       # resources :students, only: :index
       member do
