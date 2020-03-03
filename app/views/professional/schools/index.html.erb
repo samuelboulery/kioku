@@ -1,10 +1,16 @@
+<div class="container">
+
 <div class="renseignements">
 
-  <div class= avatar>
-    <img src="https://image.darty.com/image_son/photo_numerique/appareil_photo/fujifilm_x100f_marron_s1809034600460A_105840466.jpg" height="70px"
-    width="70px"  alt="avatar" />
-    <h1>Hello Albert Pouf !!!</h1>
+  <style>
+    .line-height-username2 {
+  line-height: 5.5rem;
+}
+  </style>
+      <div class="inline-block mb-6 rounded-full bg-gray-300 pr-6 h-24 line-height-username2 text-3xl">
+      <img class="rounded-full float-left h-full" src="https://labarbeapapa.net/wp-content/uploads/2015/11/tailler-moustache-comme-magnum.jpg"> <span class="ml-3">Albert Pouf</span>
   </div>
+
 
   <div class= "comptes">
 
@@ -14,6 +20,19 @@
 
   </div>
 
+</div>
+
+
+<div class="container my-12 mx-auto px-4 md:px-12">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+     <div class="bg-white rounded-lg p-6">
+    <ul>
+      <% @schools.each do | school| %>
+      <li><%= school.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 </div>
 
 
