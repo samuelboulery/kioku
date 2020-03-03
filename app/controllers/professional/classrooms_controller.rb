@@ -1,4 +1,4 @@
-class Photographers::ClassroomsController < Photographers::ApplicationController
+class Professional::ClassroomsController < Professional::ApplicationController
    before_action :set_classroom, only: [:show, :edit, :update, :destroy]
    # before_action :set_school, only: [:new, :create]
   def index
