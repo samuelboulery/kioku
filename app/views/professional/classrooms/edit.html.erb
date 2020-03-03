@@ -1,2 +1,12 @@
-<h1>Classrooms#edit</h1>
-<p>Find me in app/views/classrooms/edit.html.erb</p>
+<h1>Edit the classroom <%= @classroom.name %></h1>
+
+
+<%= form_for([:professional, @classroom]) do |f| %>
+  Name: <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to professional_classroom_path(@classroom) do %>
+  <p>Back</p>
+  <% end %>

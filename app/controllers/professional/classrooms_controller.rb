@@ -1,6 +1,7 @@
 class Professional::ClassroomsController < Professional::ApplicationController
    before_action :set_classroom, only: [:show, :edit, :update, :destroy]
-   # before_action :set_school, only: [:new, :create]
+   before_action :set_school, only: [:create, :new]
+
   def index
     @classrooms = Classroom.all
   end
@@ -14,9 +15,10 @@ class Professional::ClassroomsController < Professional::ApplicationController
 
   def create
     @classroom = Classroom.new(classroom_params)
-    @classroom.save
+    @classroom.school_id = @school.id
+    @classroom.save!
       if @classroom.save
-        redirect_to classroom_path(@classroom)
+        redirect_to professional_classroom_path(@classroom)
       else
         @classroom.errors.full_messages
         render :new
@@ -28,7 +30,7 @@ class Professional::ClassroomsController < Professional::ApplicationController
 
   def update
     @classroom.update(classroom_params)
-    redirect_to classroom_path(@classroom)
+    # redirect_to classroom_path(@classroom)
   end
 
   def destroy
@@ -43,11 +45,11 @@ class Professional::ClassroomsController < Professional::ApplicationController
   end
 
   def classroom_params
-    params.require(:classroom).permit(:name, :school_id)
+    params.require(:classroom).permit(:name)
   end
 
-  # def set_school
-  #     @schoool = School.find(params[:school_id])
-  #   end
+  def set_school
+      @school = School.find(params[:school_id])
+  end
 
 end
