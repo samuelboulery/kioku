@@ -30,7 +30,7 @@ class Professional::ClassroomsController < Professional::ApplicationController
 
   def update
     @classroom.update(classroom_params)
-    # redirect_to classroom_path(@classroom)
+    redirect_to professional_classroom_path(@classroom)
   end
 
   def destroy
