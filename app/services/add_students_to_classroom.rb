@@ -13,8 +13,6 @@ class AddStudentsToClassroom
       student.name = row["name"]
       student.email = row["email"]
       student.classroom = @classroom
-      # TODO : should be removed when photo is optional
-      student.photo = Photo.last
       student.token = SecureRandom.hex(10)
       student.save!
     end

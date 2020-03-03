@@ -73,8 +73,5 @@ sixieme = Classroom.new(
 )
 sixieme.save!
 
-# TODO : should be removed when photo is optional
-Photo.create(photo_type: true, classroom: sixieme)
-
 csv_file_sixieme = "#{Rails.root}/lib/students_lists/students_sixieme.csv"
 AddStudentsToClassroom.new(sixieme, csv_file_sixieme).call
