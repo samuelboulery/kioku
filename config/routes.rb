@@ -7,9 +7,12 @@ Rails.application.routes.draw do
       resources :classrooms, only: [:new, :create]
     end
     resources :classrooms, only: [:show, :edit, :update]
+    authenticated :photographer do
+      root :to => "schools#index"
+    end
   end
 
-  namespace :director do #root path perso (school/controller/action/show)
+  namespace :director do #root path perso (director/controller/action/show)
     resources :classrooms, only: :show do
       # resources :students, only: :index
       member do
@@ -17,9 +20,17 @@ Rails.application.routes.draw do
         get :associate
       end
     end
+    authenticated :school do
+      root :to => "schools#show"
+    end
   end
+
+
+
   # resources :students, only: [:new, :create, :edit, :update]
   get "/consultation", to: "students#consultation" # >> consultation eleve
-  # root to: 'pages#home'
+
+  root to: redirect("/photographers/sign_in")
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

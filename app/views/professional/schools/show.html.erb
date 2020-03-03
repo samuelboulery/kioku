@@ -1,1 +1,24 @@
-show.html.erb
+<h1><%= @school.name %></h1>
+
+<p><%= @school.address %></p>
+<p><%= @school.email  %></p>
+
+
+Classrooms List
+<% @school.classrooms.each do |classroom| %>
+  <p><%= link_to professional_classroom_path(classroom.id) do %>
+  <p><%= classroom.name %></p>
+  <% end %></p>
+<% end %>
+
+
+<%= link_to new_professional_school_classroom_path(@school) do %>
+  <p>Add a new class</p>
+  <% end %>
+
+
+
+  <%= link_to professional_schools_path do %>
+  <p>Back to the list</p>
+  <% end %>
+

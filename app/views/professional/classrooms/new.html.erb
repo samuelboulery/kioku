@@ -1,7 +1,12 @@
 <h1>Add a new classroom</h1>
 
 
-<%= form_for :classroom do |f| %>
-  Name: <%= f.text_field :name %><br />
+<%= form_for ([:professional, @school, @classroom]) do |f| %>
+  <%= f.text_field :name %>
   <%= f.submit %>
 <% end %>
+
+
+<%= link_to professional_school_path(@school) do %>
+  <p>Back</p>
+  <% end %>
