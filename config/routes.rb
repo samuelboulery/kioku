@@ -3,18 +3,23 @@ Rails.application.routes.draw do
   devise_for :schools, path: "schools"
 
   namespace :photographers do
-    resources :schools, only: :index do
-      resources :classrooms, only: :index
+    resources :schools, only: [:index, :show] do
+      resources :classrooms, only: [:new, :create]
     end
-    resources :classrooms, only: [:new, :create, :edit, :update]
+    resources :classrooms, only: [:show, :edit, :update]
   end
 
-  namespace :schools do
-    resources :classrooms, only: :index do
-      resources :students, only: :index
+  namespace :schools do #root path perso (school/controller/action/show)
+    resources :classrooms, only: :show do
+      # resources :students, only: :index
+      member do
+        post :import
+        get :associate
+      end
     end
-    resources :students, only: [:new, :create, :edit, :update]
   end
+  # resources :students, only: [:new, :create, :edit, :update]
+  get "/consultation", to: "students#consultation" # >> consultation eleve
   # root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
