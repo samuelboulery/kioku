@@ -33,7 +33,7 @@ class Professional::ClassroomsController < Professional::ApplicationController
 
   def destroy
     @classroom.destroy
-    redirect_to , notice: 'Classroom was successfully destroyed.'
+    # redirect_to , notice: 'Classroom was successfully destroyed.'
   end
 
   private
