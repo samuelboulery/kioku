@@ -1,5 +1,10 @@
 <h1><%= @classroom.name %></h1>
 
+<%= link_to edit_professional_classroom_path(@classroom.id) do %>
+  <p>Edit this classroom</p>
+  <% end %>
+
+
 
   <%= link_to professional_school_path(@classroom.school_id) do %>
   <p>Back to the list</p>
