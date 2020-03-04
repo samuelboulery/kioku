@@ -3,7 +3,7 @@ class Professional::ClassroomsController < Professional::ApplicationController
    before_action :set_school, only: [:create, :new]
 
   def index
-    @classrooms = Classroom.all
+    @classrooms = current_photographer.classrooms.all
   end
 
   def show
@@ -41,7 +41,7 @@ class Professional::ClassroomsController < Professional::ApplicationController
   private
 
   def set_classroom
-    @classroom = Classroom.find(params[:id])
+    @classroom = current_photographer.classrooms.find(params[:id])
   end
 
   def classroom_params
@@ -49,7 +49,7 @@ class Professional::ClassroomsController < Professional::ApplicationController
   end
 
   def set_school
-      @school = School.find(params[:school_id])
+      @school = current_photographer.schools.find(params[:school_id])
   end
 
 end
