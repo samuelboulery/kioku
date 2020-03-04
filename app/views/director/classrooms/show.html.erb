@@ -1,29 +1,19 @@
-<h1>Hello director, welcome back !</h1>
+<h1><%= "ADD STUDENTS TO THE CLASSROOM => #{@classroom.name}" %></h1>
+<br>
 
-<p>Here, is your class folder :</p>
+<%= form_for(:director, url: import_director_classroom_path) do |f| %>
+  <%= f.file_field :csv %>
+  <%= f.submit %>
+<% end %>
+<br>
 
-<p><strong>Ecole:<br></strong>&ensp;<%= @school.name %></p>
-
-setting
-
-log out
-
-
-
-
-
-
-
-
-
-
-
-<!-- VERSION FINALE  -->
-
-<!-- Earned this year :
-XXXX€
-
-Chose your profit margin :
-XX% -->
-
-
+<ul>
+  <p><%= "#{@classroom.students.count} students in the classroom #{@classroom.name} :" %></p>
+  <br>
+  <% @classroom.students.each do |student| %>
+    <li>
+      <%= student.name %>
+      <%= student.email %>
+    </li>
+  <% end %>
+</ul>
