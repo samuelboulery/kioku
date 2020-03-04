@@ -13,16 +13,27 @@ class Professional::ClassroomsController < Professional::ApplicationController
     @classroom = Classroom.new
   end
 
+  # def create
+  #   @classroom = Classroom.new(classroom_params)
+  #   @classroom.school_id = @school.id
+  #   @classroom.save!
+  #     if @classroom.save
+  #       redirect_to professional_classroom_path(@classroom)
+  #     else
+  #       @classroom.errors.full_messages
+  #       render :new
+  #     end
+  # end
+   # POST -> params
   def create
-    @classroom = Classroom.new(classroom_params)
-    @classroom.school_id = @school.id
-    @classroom.save!
-      if @classroom.save
-        redirect_to professional_classroom_path(@classroom)
-      else
-        @classroom.errors.full_messages
+    # params -> { name: '6e7', photos: [photo1, photo2] }
+    creator = ClassroomCreator.new(params, current_photographer)
+    if creator.save
+      redirect_to professional_classroom_path(@classroom)
+    else
+      creator.errors.full_messages
         render :new
-      end
+    end
   end
 
   def edit
@@ -47,6 +58,10 @@ class Professional::ClassroomsController < Professional::ApplicationController
   def classroom_params
     params.require(:classroom).permit(:name)
   end
+
+  # def params
+  #   params.require(:classroom).permit(:name, :photos)
+  # end
 
   def set_school
       @school = current_photographer.schools.find(params[:school_id])

@@ -4,5 +4,5 @@ require("channels")
 // require("stylesheets/application.scss")
 
 // import "bootstrap";
-import "../javascripts/application"
+import "../javascripts/index"
 import "../stylesheets/application.scss"
