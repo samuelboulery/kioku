@@ -1,11 +1,11 @@
 class Professional::SchoolsController < Professional::ApplicationController
 
   def index
-    @schools = School.all
+    @schools = current_photographer.schools
   end
 
   def show
-    @school = School.find(params[:id])
+    @school = current_photographer.schools.find(params[:id])
   end
 
 end
