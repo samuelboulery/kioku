@@ -1,20 +1,29 @@
 class Director::ClassroomsController < Director::ApplicationController
-   before_action :set_director, only: [:show]
+  before_action :set_classroom
+
   def show
   end
 
-
   def import
-    # TODO : should use service AddStudentsToClassroom
+    students_quantity = ::AddStudentsToClassroom.new(@classroom, params[:director][:csv]).call
+      if students_quantity > 0
+        redirect_to director_classroom_path(@classroom)
+      else
+        redirect_to director_classroom_path(@classroom)
+      end
   end
 
   def associate
+    #TODO : SYSTEME DRAG N' DROP
   end
 
-private
+  private
 
-  def set_director
-      @school = School.find(params[:id])
+  def set_classroom
+    @classroom = current_school.classrooms.find(params[:id])
+  end
+
+  def classroom_params
+    params.require(:classroom).permit(:csv)
   end
 end
-
