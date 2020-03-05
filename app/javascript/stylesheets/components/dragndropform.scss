@@ -13,8 +13,8 @@
   top: 0;
   bottom: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   justify-content: center;
   background: #ccc;
   border: 3px dotted #bebebe;
@@ -22,7 +22,7 @@
 }
 
 .label {
-  display: inline-block;
+  display: block;
   position: relative;
   height: 100px;
   width: 400px;

@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     var dropzone = document.querySelector('.dragndrop-form');
 
 
+
     fileInput.addEventListener('change', function() {
       var files = fileInput.files;
       console.log(files);
@@ -15,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
         file = files.item(i);
         // // ou encore
         // file = files[i];
-        filenameContainer.insertAdjacentHTML("beforeend", file.name);
+        filenameContainer.insertAdjacentHTML("beforeend", `<li>${file.name}</li>`);
       }
     });
 

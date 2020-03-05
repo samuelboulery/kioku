@@ -4,9 +4,10 @@ class ClassroomCreator
     @photographer = photographer
   end
   def save
-    classroom = Classroom.create(name: params[:name], photographer: photographer)
-    params[:photos].each do |photo|
-      Photo.create(file: photo, classroom: classroom, photographer: photographer)
+    classroom = Classroom.create(name: @params[:classroom][:name], school_id: @params[:school_id])
+    Photo.create(file: @params[:classroom][:gphoto], classroom: classroom, photographer: @photographer, photo_type: true)
+    @params[:classroom][:photos].each do |photo|
+      Photo.create(file: photo, classroom: classroom, photographer: @photographer, photo_type: false)
     end
     true
   end
