@@ -8,15 +8,15 @@ class AddStudentsToClassroom
   end
 
   def call
+    counter = 0
     CSV.foreach(@csv_file, headers: :first_row) do |row|
       student = Student.new
       student.name = row["name"]
       student.email = row["email"]
       student.classroom = @classroom
-      # TODO : should be removed when photo is optional
-      student.photo = Photo.last
       student.token = SecureRandom.hex(10)
-      student.save!
+      counter += 1 if student.save
     end
+    return counter
   end
 end

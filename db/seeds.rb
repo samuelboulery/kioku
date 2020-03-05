@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Photographer.destroy_all
 School.destroy_all
 
@@ -72,9 +65,3 @@ sixieme = Classroom.new(
   school: college,
 )
 sixieme.save!
-
-# TODO : should be removed when photo is optional
-Photo.create(photo_type: true, classroom: sixieme)
-
-csv_file_sixieme = "#{Rails.root}/lib/students_lists/students_sixieme.csv"
-AddStudentsToClassroom.new(sixieme, csv_file_sixieme).call

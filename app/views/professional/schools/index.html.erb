@@ -1,9 +1,36 @@
 
+<<<<<<< HEAD
     <% @schools.each do |school| %>
     <p><%= link_to professional_school_path(school.id) do %>
       <p><%= school.name %></p>
       <% end %></p>
       <% end %>
+=======
+<div class="renseignements">
+
+  <style>
+    .line-height-username2 {
+  line-height: 5.5rem;
+}
+  </style>
+      <div class="inline-block mb-6 rounded-full bg-gray-300 pr-6 h-24 line-height-username2 text-3xl">
+      <img class="rounded-full float-left h-full" src="https://labarbeapapa.net/wp-content/uploads/2015/11/tailler-moustache-comme-magnum.jpg"> <span class="ml-3"><%= current_photographer.fullname %></span>
+
+    Schools List:
+<% @schools.each do |school| %>
+  <p><%= link_to professional_school_path(school.id) do %>
+  <p><%= school.name %></p>
+  <p><%= school.address %></p>
+  <% end %></p>
+<% end %>
+  </div>
+
+  <div class= "comptes">
+
+  </div>
+
+  <div class= "inbox">
+>>>>>>> 45316fd8867a11fe781a6cda4bef49a7661be46e
 
 <div class="container mx-auto bg-red-200">
 

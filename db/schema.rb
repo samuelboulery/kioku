@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_154936) do
+ActiveRecord::Schema.define(version: 2020_03_03_180629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_154936) do
     t.bigint "classroom_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "photographer_id", null: false
     t.index ["classroom_id"], name: "index_photos_on_classroom_id"
+    t.index ["photographer_id"], name: "index_photos_on_photographer_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -64,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_154936) do
     t.string "name"
     t.string "token"
     t.bigint "classroom_id", null: false
-    t.bigint "photo_id", null: false
+    t.bigint "photo_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
@@ -75,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_154936) do
 
   add_foreign_key "classrooms", "schools"
   add_foreign_key "photos", "classrooms"
+  add_foreign_key "photos", "photographers"
   add_foreign_key "schools", "photographers"
   add_foreign_key "students", "classrooms"
   add_foreign_key "students", "photos"
