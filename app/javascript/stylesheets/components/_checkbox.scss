@@ -17,7 +17,7 @@ input[type="checkbox"]:focus {
   width: 24px;
   height: 24px;
   top: calc(10vh - 12px);
-  left: calc(vw - 12px);
+  left: calc(5vw - 12px);
 }
 .cbx input {
   position: absolute;
@@ -106,6 +106,7 @@ input[type="checkbox"]:focus {
 }
 
 
+
 // TO TEST IT IN HTML COPY/PASTE BELOW
 
 // <div class="cbx">
@@ -125,3 +126,4 @@ input[type="checkbox"]:focus {
 //     </filter>
 //   </defs>
 // </svg>
+

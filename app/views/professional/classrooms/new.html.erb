@@ -3,12 +3,22 @@
 
 <%= form_for ([:professional, @school, @classroom]), html: {id: "drag"} do |f| %>
   <%= f.label :name, 'Classroom Name:' %>
-  <%= f.text_field :name %>
-  <div class="label"><%= f.label :photos %>
-    <div class="dragndrop-form">Click or drop pictures here</div>
-  <%= f.file_field :photos, multiple: true, direct_upload: true %></div>
-  <ul>
-      <li id="filename"></li>
+  <%= f.text_field :name , value:'Classroom'%>
+  <div class="label">
+    <%= f.label :gphoto %>
+    <div class="dragndrop-form">
+      <p class="inactive">Click or drop Group picture here</p>
+    </div>
+    <%= f.file_field :gphoto, direct_upload: true %>
+  </div>
+  <div class="label">
+    <%= f.label :photos %>
+    <div class="dragndrop-form">
+      <p class="inactive">Click or drop Individual pictures here</p>
+    </div>
+    <%= f.file_field :photos, multiple: true, direct_upload: true %>
+  </div>
+  <ul id="filename">
   </ul>
   <%= f.submit %>
 <% end %>
@@ -16,3 +26,8 @@
 <%= link_to professional_school_path(@school) do %>
   <p>Back</p>
   <% end %>
+
+<%= form_for(Photo.new, url: '/professional/schools/1/classrooms') do |f| %>
+  <%= f.file_field :file, direct_upload: true %>
+  <%= f.submit %>
+<% end %>

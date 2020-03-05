@@ -1,6 +1,47 @@
 <h1>Hello director, welcome back !</h1>
 <p><strong>Ecole:</strong>&ensp;<%= current_school.name %></p>
-<p>Here, is your class folder :</p>
+
+
+
+
+<p>Here, are your class folders :</p>
+
+
 <% @classrooms.each do |classroom| %>
+<%= link_to director_classroom_path(classroom) do %>
 <%= classroom.name %>
+<div class="cbx">
+  <input id="cbx" type="checkbox"/>
+  <label for="cbx"></label>
+  <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
+    <path d="M2 8.36364L6.23077 12L13 2"></path>
+  </svg>
+</div>
 <% end %>
+<% end %>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <fegaussianblur in="SourceGraphic" stddeviation="4" result="blur"></fegaussianblur>
+      <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo"></fecolormatrix>
+      <feblend in="SourceGraphic" in2="goo"></feblend>
+    </filter>
+  </defs>
+</svg>
+
+<table class="table-fixed">
+  <tbody>
+    <tr>
+      <td class="border-b-2 px-4 py-2 font-bold">Intro to CSS</td>
+      <td class="border-b-2 px-4 py-2 text-gray-500">Adam</td>
+      <td class="border-b-2 px-4 py-2">858</td>
+      <td class="bg-purple-500 font-bold rounded-full py-2 px-4 opacity-75">Envoyé</td>
+    </tr>
+    <tr>
+      <td class="border-b-2 px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
+      <td class="border-b-2 px-4 py-2">Adam</td>
+      <td class="border-b-2 px-4 py-2">112</td>
+    </tr>
+  </tbody>
+</table>
+
