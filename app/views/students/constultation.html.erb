@@ -3,9 +3,11 @@
 
   <% if @student.photos.exists? %>
     <% @student.photos.each do |photo| %>
-      <% if photo.photo_type %>
+      <%= cl_image_tag photo.file.key, :opacity => 100, :effect => "brightness:20",
+                  :width => 200, :overlay => "sample_watermark_ijogba" %>
         <p>Photo de Groupe</p>
-        <%= cl_image_tag photo.file.key %>
+        <%= cl_image_tag photo.file.key, :opacity => 100, :effect => "brightness:20",
+                  :width => 200, :overlay => "sample_watermark_ijogba" %>
         <p>Photos Individuelles</p>
       <% else %>
         <%= cl_image_tag photo.file.key %>
