@@ -1,50 +1,10 @@
-<% photo = Photo.find(11) %>
-
-<%= cl_image_tag photo %>
-
-
-<div class="container">
-
-<div class="renseignements">
-
-  <style>
-    .line-height-username2 {
-  line-height: 5.5rem;
-}
-  </style>
-      <div class="inline-block mb-6 rounded-full bg-gray-300 pr-6 h-24 line-height-username2 text-3xl">
-      <img class="rounded-full float-left h-full" src="https://labarbeapapa.net/wp-content/uploads/2015/11/tailler-moustache-comme-magnum.jpg"> <span class="ml-3"><%= current_photographer.fullname %></span>
+<span class="ml-3"><%= current_photographer.fullname %></span>
 
     Schools List:
 <% @schools.each do |school| %>
-  <p><%= link_to professional_school_path(school.id) do %>
-  <p><%= school.name %></p>
-  <p><%= school.address %></p>
-  <% end %></p>
-<% end %>
-  </div>
-
-  <div class= "comptes">
-
-  </div>
-
-  <div class= "inbox">
-
-  </div>
-
-</div>
-
-
-<div class="container my-12 mx-auto px-4 md:px-12">
-  <div class="flex flex-wrap -mx-1 lg:-mx-4">
-     <div class="bg-white rounded-lg p-6">
-    <ul>
-      <% @schools.each do | school| %>
-      <li><%= school.name %></li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-</div>
+    <p><%= link_to professional_school_path(school.id) do %>
+      <p><%= school.name %></p>
+      <% end %></p>
+     <% end %>
 
 
