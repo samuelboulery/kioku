@@ -1,0 +1,13 @@
+  .btn-white {
+    @apply bg-white text-red-600 shadow;
+  }
+  .btn-white:hover {
+    @apply bg-gray-100;
+  }
+
+
+// TO TEST IT IN HTML COPY/PASTE BELOW
+
+// <button class="btn btn-white">
+//   Import a csv
+// </button>
