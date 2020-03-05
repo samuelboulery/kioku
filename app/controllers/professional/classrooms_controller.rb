@@ -29,6 +29,7 @@ class Professional::ClassroomsController < Professional::ApplicationController
     # params -> { name: '6e7', photos: [photo1, photo2] }
     creator = ClassroomCreator.new(params, current_photographer)
     if creator.save
+      @classroom = creator.classroom
       redirect_to professional_classroom_path(@classroom)
     else
       creator.errors.full_messages
@@ -58,10 +59,6 @@ class Professional::ClassroomsController < Professional::ApplicationController
   def classroom_params
     params.require(:classroom).permit(:name)
   end
-
-  # def params
-  #   params.require(:classroom).permit(:name, :photos)
-  # end
 
   def set_school
       @school = current_photographer.schools.find(params[:school_id])

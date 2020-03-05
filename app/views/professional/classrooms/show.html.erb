@@ -5,6 +5,20 @@
   <% end %>
 
 
+  <%= @classroom.photos.count %>
+  <% @classroom.photos.each do |photo| %>
+    <% if photo.photo_type %>
+      <p>Photo de Groupe</p>
+      <%= cl_image_tag photo.file.key %>
+      <p>Photos Individuelles</p>
+    <% else %>
+      <%= cl_image_tag photo.file.key %>
+    <% end %>
+
+  <% end %>
+
+
+
 
   <%= link_to professional_school_path(@classroom.school_id) do %>
   <p>Back to the list</p>

@@ -1,12 +1,29 @@
 <h1>Edit the classroom <%= @classroom.name %></h1>
 
 
-<%= form_for([:professional, @classroom]) do |f| %>
-  Name: <%= f.text_field :name %>
+<%= form_for ([:professional, @classroom]), html: {id: "drag"} do |f| %>
+  <%= f.label :name, 'Classroom Name:' %>
+  <%= f.text_field :name %>
+  <div class="label">
+    <%= f.label :gphoto %>
+    <div class="dragndrop-form">
+      Click or drop Group picture here
+    </div>
+    <%= f.file_field :gphoto, direct_upload: true %>
+  </div>
+  <div class="label">
+    <%= f.label :photos %>
+    <div class="dragndrop-form">
+      Click or drop Individual pictures here
+    </div>
+    <%= f.file_field :photos, multiple: true, direct_upload: true %>
+  </div>
+  <ul id="filename">
+  </ul>
   <%= f.submit %>
 <% end %>
 
 
 <%= link_to professional_classroom_path(@classroom) do %>
   <p>Back</p>
-  <% end %>
+<% end %>
