@@ -1,7 +1,6 @@
 <h1>Hello director, welcome back !</h1>
-
 <p><strong>Ecole:</strong>&ensp;<%= current_school.name %></p>
-
 <p>Here, is your class folder :</p>
-
-<!-- #TODO  AFFICHAGE DES DOSSIERS CLASSE -->
+<% @classrooms.each do |classroom| %>
+<%= classroom.name %>
+<% end %>

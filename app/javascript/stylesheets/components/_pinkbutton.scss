@@ -1,0 +1,13 @@
+  .btn-pink {
+    @apply bg-red-500 text-white;
+  }
+  .btn-pink:hover {
+    @apply bg-red-700;
+  }
+
+
+// TO TEST IT IN HTML COPY/PASTE BELOW
+
+// <button class="btn btn-pink">
+//   Validate all classrooms
+// </button>
