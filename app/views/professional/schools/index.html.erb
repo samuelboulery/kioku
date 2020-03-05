@@ -1,13 +1,10 @@
+<span class="ml-3"><%= current_photographer.fullname %></span>
 
-    <% @schools.each do |school| %>
+    Schools List:
+<% @schools.each do |school| %>
     <p><%= link_to professional_school_path(school.id) do %>
       <p><%= school.name %></p>
       <% end %></p>
-      <% end %>
-
-<div class="container mx-auto bg-red-200">
-
-</div>
-
+     <% end %>
 
 
