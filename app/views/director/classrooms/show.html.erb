@@ -29,15 +29,19 @@
     <% @classroom.photos.each do |photo| %>
       <% if photo.photo_type %>
         <p>Photo de Groupe</p>
-        <%= cl_image_tag photo.file.key %>
+        <%= cl_image_tag photo.file.key, :opacity => 100, :effect => "brightness:20",
+                  :width => 200, :overlay => "sample_watermark_ijogba" %>
         <p>Photos Individuelles</p>
       <% else %>
-        <%= cl_image_tag photo.file.key %>
+        <%= cl_image_tag photo.file.key, :opacity => 100, :effect => "brightness:20",
+                  :width => 200, :overlay => "sample_watermark_ijogba" %>
       <% end %>
     <% end %>
   <% else %>
     <p>There is no picture uploaded yet!</p>
   <% end %>
+
+
 
 <br>
 
