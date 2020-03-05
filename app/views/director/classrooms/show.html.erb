@@ -1,4 +1,4 @@
-<h1><%= "ADD STUDENTS TO THE CLASSROOM => #{@classroom.name}" %></h1>
+<h1><%= "Import students to your => #{@classroom.name}" %></h1>
 
 <br>
 
@@ -6,6 +6,11 @@
   <%= f.file_field :csv %>
   <%= f.submit 'Save' %>
 <% end %>
+
+<%= link_to director_root_path do %>
+  <p>Back to your dashboard</p>
+<% end %>
+
 
 <!-- #TODO: METTRE LA FORM DE MARIE / <%= form_for ([:professional, @school, @classroom]), html: {id: "drag"} do |f| %>
   <%= f.label :name, 'Classroom Name:' %>
@@ -16,6 +21,23 @@
   <p id="filename"></p>
   <%= f.submit %>
 <% end %> -->
+
+<!-- Students Photos -->
+<h2>Photos</h2>
+
+  <% if @classroom.photos.exists? %>
+    <% @classroom.photos.each do |photo| %>
+      <% if photo.photo_type %>
+        <p>Photo de Groupe</p>
+        <%= cl_image_tag photo.file.key %>
+        <p>Photos Individuelles</p>
+      <% else %>
+        <%= cl_image_tag photo.file.key %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>There is no picture uploaded yet!</p>
+  <% end %>
 
 <br>
 
