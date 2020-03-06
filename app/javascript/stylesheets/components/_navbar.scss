@@ -1,0 +1,12 @@
+.navbar {
+   @apply w-full h-10 flex justify-between items-center
+ }
+
+.logout {
+  @apply mr-8 text-purple
+ }
+
+.logo {
+  @apply bg-purple w-56 h-full flex justify-center items-center
+ }
+
