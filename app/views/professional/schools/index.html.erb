@@ -9,11 +9,43 @@
   <h1>School's Dashboard</h1>
   <div class="search">
     <%= form_tag(professional_schools_path, method: "get") do %>
-    <%= text_field_tag :name, params[:name], class:"w-1/2 rounded-bl-md rounded-tl-md h-12" %>
-    <%= submit_tag "Search", class:"w-24 rounded-br-md rounded-tr-md h-12" %>
+    <%= text_field_tag :name, params[:name], class:"w-1/2 rounded-bl-md rounded-tl-md h-10" %>
+    <%= submit_tag "Search", class:"w-24 rounded-br-md rounded-tr-md h-10" %>
     <% end %>
   </div>
 </div>
+
+
+<div class=" flex container mx-auto mr-48 justify-end">
+  <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white absolute z-1 " style="margin-top: -118px">
+    <div class="px-10 pt-6 pb-10">
+      <div class="text-4xl text-purple h-8">Hello</div>
+      <div class="font-bold text-4xl text-purple pb-2 border-b-2">Bernard</div>
+      <div class="flex py-3 font-bold text-lg text-gray-500 justify-center">January</div>
+      <div class="flex justify-between">
+        <div class="flex justify-start">
+          <p class="pt-3 text-lg text-gray-500">£ </p>
+          <p class="py-3 font-bold text-lg pl-1"> 3 309</p>
+        </div>
+        <div class="flex justify-end">
+          <p class="py-3 font-bold text-lg">280 </p>
+          <p class="pt-3 text-lg text-gray-500 pl-1"> students</p>
+        </div>
+      </div>
+      <div class="flex justify-between pb-3 border-b-2">
+        <div class="flex justify-start">
+          <p class="py-3 font-bold text-lg pr-1">24 </p>
+          <p class="pt-3 text-lg text-gray-500 pr-3"> classrooms</p>
+        </div>
+        <div class="flex justify-end">
+          <p class="py-3 font-bold text-lg">11 </p>
+          <p class="pt-3 text-lg text-gray-500 pl-1"> schools</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
