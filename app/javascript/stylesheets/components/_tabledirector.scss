@@ -1,20 +1,28 @@
-// A FINIR MATHIAS
+
+// RESTE A CHANGER LES ICONES/IMAGES
+
+// TO TEST IT IN HTML COPY/PASTE BELOW
 
 
-// <table class="table-fixed">
-//   <tbody>
-//     <tr>
-//       <td class="bg-white px-4 py-2 shadow"><svg class="fill-current text-teal-500 h-12 w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-//         <path d="M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z"/>
-//       </svg></i></td>
-//       <td class="border-b-2 px-4 py-2 font-bold">School Bertrand</td>
-//       <td class="border-b-2 px-4 py-2 text-gray-500">23 rue des pieds</td>
-//       <td class="bg-purple font-bold rounded-full py-1 px-6 opacity-75">Envoyé</td>
-//     </tr>
-//     <tr>
-//       <td class="border-b-2 px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-//       <td class="border-b-2 px-4 py-2">Adam</td>
-//       <td class="border-b-2 px-4 py-2">112</td>
-//     </tr>
-//   </tbody>
-// </table>
+// <div class="container mx-auto">
+//   <div class="table-fixed w-3/4">
+//       <div class="flex items-center justify-between border-b-2 px-4 py-2">
+//           <div><img class="w-8" src="https://image.flaticon.com/icons/svg/1523/1523895.svg"></div>
+//           <div class="font-bold">School Bertrand</div>
+//           <div class="text-gray-500">23 rue des pieds</div>
+//           <div><%= image_tag("Envoyé", class:"w-20") %></div>
+//       </div>
+//       <div class="flex items-center justify-between border-b-2 px-4 py-2">
+//           <div><img class="w-8" src="https://image.flaticon.com/icons/svg/1523/1523895.svg"></div>
+//           <div class="font-bold">School Bertrand</div>
+//           <div class="text-gray-500">23 rue des pieds</div>
+//           <div><%= image_tag("Envoyé", class:"w-20") %></div>
+//       </div>
+//       <div class="flex items-center justify-between border-b-2 px-4 py-2">
+//           <div><img class="w-8" src="https://image.flaticon.com/icons/svg/1523/1523895.svg"></div>
+//           <div class="font-bold">School Bertrand</div>
+//           <div class="text-gray-500">23 rue des pieds</div>
+//           <div><%= image_tag("Envoyé", class:"w-20") %></div>
+//       </div>
+//   </div>
+// </div>
