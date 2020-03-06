@@ -6,3 +6,4 @@ require("channels")
 // import "bootstrap";
 import "../javascripts/index"
 import "../stylesheets/application.scss"
+// import "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"
