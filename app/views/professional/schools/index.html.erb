@@ -48,13 +48,41 @@
 
 
 
+<div class="container mx-auto pt-12 pb-12">
+  <% @schools.each do |school| %>
+    <div class="w-3/4">
+      <div class="flex items-center justify-between border-b-2 px-4 py-2">
+        <div><img class="w-8" src="https://image.flaticon.com/icons/svg/1523/1523895.svg"></div>
+        <p>
+          <%= link_to professional_school_path(school.id) do %>
+            <div class="font-bold"><p><%= school.name %></p></div>
+            <div class="text-gray-500"><%= school.address %></div>
+            <div class="w-20"><%= image_tag("Envoyé") %></div>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 
-    Schools List:
-<% @schools.each do |school| %>
-  <p><%= link_to professional_school_path(school.id) do %>
-    <p><%= school.name %></p>
-      <% end %></p>
-     <% end %>
+<!-- <div class="cbx">
+  <input id="cbx" type="checkbox"/>
+  <label for="cbx"></label>
+  <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
+    <path d="M2 8.36364L6.23077 12L13 2"></path>
+  </svg>
+</div>
 
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <fegaussianblur in="SourceGraphic" stddeviation="4" result="blur"></fegaussianblur>
+      <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo"></fecolormatrix>
+      <feblend in="SourceGraphic" in2="goo"></feblend>
+    </filter>
+  </defs>
+</svg>
+</div>
+ -->
 
