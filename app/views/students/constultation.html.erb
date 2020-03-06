@@ -1,28 +1,24 @@
-<h1><%= @classroom.name %></h1>
+<h1>Consultation</h1>
+<p><%= @student.name %> pictures</p>
 
-<%= link_to edit_professional_classroom_path(@classroom.id) do %>
-  <p>Edit this classroom</p>
-  <% end %>
 
-  <%= @classroom.photos.count %>
-  <% if @classroom.photos.exists? %>
-    <% @classroom.photos.each do |photo| %>
+  <% if @student.photos.exists? %>
+    <% @student.photos.each do |photo| %>
       <% if photo.photo_type %>
         <p>Photo de Groupe</p>
         <%= cl_image_tag photo.file.key, :transformation=>[
-  {:width=>200, :height=>200, :crop=>"fill"},
+  {:width=>200, :height=>300, :crop=>"fill"},
   {:overlay=>"sample_watermark_ijogba", :effect=>"brightness:20", :opacity=>100, :width=>0.3,}
   ] %>
         <p>Photos Individuelles</p>
       <% else %>
         <%= cl_image_tag photo.file.key, :transformation=>[
-  {:width=>200, :height=>200, :crop=>"fill"},
+  {:width=>200, :height=>300, :crop=>"fill"},
   {:overlay=>"sample_watermark_ijogba", :effect=>"brightness:20", :opacity=>100, :width=>0.3,}
   ] %>
       <% end %>
     <% end %>
+  <% else %>
+    <p>There is no picture uploaded yet!</p>
   <% end %>
 
-  <%= link_to professional_school_path(@classroom.school_id) do %>
-  <p>Back to the list</p>
-  <% end %>
