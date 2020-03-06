@@ -1,9 +1,27 @@
-<span class="ml-3"><%= current_photographer.fullname %></span>
+<div class="navbar">
+  <div class="logo" >
+    <%= image_tag("logo", class:"w-12") %>
+  </div>
+  <a href="#" class="logout">Log out</a>
+</div>
+
+<div class="banner">
+  <h1>School's Dashboard</h1>
+  <div class="search">
+    <%= form_tag(professional_schools_path, method: "get") do %>
+    <%= text_field_tag :name, params[:name], class:"w-1/2 rounded-bl-md rounded-tl-md h-12" %>
+    <%= submit_tag "Search", class:"w-24 rounded-br-md rounded-tr-md h-12" %>
+    <% end %>
+  </div>
+</div>
+
+
+
 
     Schools List:
 <% @schools.each do |school| %>
-    <p><%= link_to professional_school_path(school.id) do %>
-      <p><%= school.name %></p>
+  <p><%= link_to professional_school_path(school.id) do %>
+    <p><%= school.name %></p>
       <% end %></p>
      <% end %>
 

@@ -1,7 +1,7 @@
 class Professional::SchoolsController < Professional::ApplicationController
 
   def index
-    @schools = current_photographer.schools
+    params[:name].present? ? @schools = current_photographer.schools.where(name: params[:name].capitalize) : @schools = current_photographer.schools
   end
 
   def show
