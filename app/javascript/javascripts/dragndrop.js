@@ -4,37 +4,42 @@ window.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("drag");
 
   if (form) {
-    var fileInput = document.querySelector('input[type=file]');
-    var filenameContainer = document.querySelector('#filename');
+    var fileInputs = document.querySelectorAll('input[type=file]');
     var dropzone = document.querySelectorAll('.label');
-    var pactive = document.querySelector('.inactive');
+    var pactives = document.querySelectorAll('.inactive');
 
     dropzone.forEach((element) => {
+      var fileInput = element.querySelector('input[type=file]');
+      var dropzone2 = element.querySelector('.dragndrop-form');
+      var pactive = element.querySelector('.inactive');
+      var filenameContainer = element.querySelector('.files');
+
       element.querySelector('.dragndrop-form > p').classList.remove('inactive');
+
 
       element.querySelector('input[type=file]').addEventListener('change', function() {
         var files = fileInput.files;
         element.querySelector('.dragndrop-form > p').classList.add('inactive');
+        // filenameContainer.innerText = fileInput.files.split('\\').pop();
         console.log(files);
-      for (var i = 0; i < files.length; i++) {
-        // on récupère le i-ème fichier
-        // file = files.item(i);
-        // // ou encore
-        // file = files[i];
-        // directUploads();
-        // filenameContainer.insertAdjacentHTML("beforeend", `<li>${file.name}</li>`);
+        for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        console.log(file.name);
+        filenameContainer.insertAdjacentHTML("beforeend", `<p>${file.name}</p>`);
       }
-    });
 
     });
-    directUploads();
 
     fileInput.addEventListener('dragenter', function() {
-      dropzone.classList.add('dragover');
+      dropzone2.classList.add('dragover');
     });
 
     fileInput.addEventListener('dragleave', function() {
-      dropzone.classList.remove('dragover');
+      dropzone2.classList.remove('dragover');
     });
+
+    });
+
   };
+  directUploads();
 });
