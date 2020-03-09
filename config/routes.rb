@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   as :photographer do
     get '/', to: 'devise/sessions#new', as: :new_photographer_session
     post 'signin_photographer', to: 'devise/sessions#create', as: :photographer_session
+    delete 'signout_photographer', to: 'devise/sessions#destroy' 
   end
 
   devise_for :schools, path: "schools", skip: :sessions
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   as :school do
     get '/', to: 'devise/sessions#new', as: :new_school_session
     post 'signin_school', to: 'devise/sessions#create', as: :school_session
+    delete 'signout_school', to: 'devise/sessions#destroy' 
   end
 
 
