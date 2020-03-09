@@ -13,25 +13,15 @@ class Director::ClassroomsController < Director::ApplicationController
       end
   end
 
-  def associate
-    @students = @classroom.students
-    @students.each do |student|
-      student.photo_id = photo.id
-      student.save!
-    end
-    #TODO : SYSTEME DRAG N' DROP
-  end
-
   private
 
   def set_classroom
     @classroom = current_school.classrooms.find(params[:id])
   end
 
-
-
   def classroom_params
     params.require(:classroom).permit(:csv)
   end
+
 end
 
