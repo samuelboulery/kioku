@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :schools, only: [:index, :show] do
       resources :classrooms, only: [:new, :create]
     end
+    post "schools/invite", to: "schools#invite"
     resources :classrooms, only: [:show, :edit, :update]
     authenticated :photographer do
       root :to => "schools#index"
