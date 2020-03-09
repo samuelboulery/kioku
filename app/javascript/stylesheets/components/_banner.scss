@@ -1,5 +1,14 @@
 .banner {
-  @apply bg-purple w-full h-64 pl-64 pt-12
+  // background: image-url('banner.svg');
+  // background: url('/assets/banner.svg');
+  background-size: cover;
+  background-position: center;
+  // background: #7d07f2;
+  width: 100%;
+  height: 16rem;
+  padding-left: 16rem;
+  padding-top: 3rem;
+  // @apply bg-purple w-full h-64 pl-64 pt-12 
 }
 
 .banner h1 {

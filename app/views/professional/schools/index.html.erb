@@ -1,4 +1,4 @@
-<div class="banner">
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
   <h1>School's Dashboard</h1>
   <div class="search">
     <%= form_tag(professional_schools_path, method: "get") do %>
@@ -8,6 +8,7 @@
   </div>
 </div>
 
+<!-- <%= image_tag ('banner.svg') %> -->
 <div class=" flex mx-auto mr-48 justify-end">
   <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white absolute z-1 " style="margin-top: -118px">
     <div class="px-10 pt-6 pb-10">
