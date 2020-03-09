@@ -16,7 +16,7 @@
 </div>
 
 
-<div class=" flex container mx-auto mr-48 justify-end">
+<div class=" flex mx-auto mr-48 justify-end">
   <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white absolute z-1 " style="margin-top: -118px">
     <div class="px-10 pt-6 pb-10">
       <div class="text-4xl text-purple h-8">Hello</div>
@@ -48,17 +48,17 @@
 
 
 
-<div class="container mx-auto pt-12 pb-12">
+<div class="w-3/4 mx-auto pt-12 pb-12">
   <% @schools.each do |school| %>
     <div class="w-3/4">
       <div class="flex items-center justify-between border-b-2 px-4 py-2">
         <div><img class="w-8" src="https://image.flaticon.com/icons/svg/1523/1523895.svg"></div>
         <p>
           <%= link_to professional_school_path(school.id) do %>
-            <div class="font-bold"><p><%= school.name %></p></div>
+            <div class="font-bold"><%= school.name %></p></div>
             <div class="text-gray-500"><%= school.address %></div>
-            <div class="w-20"><%= image_tag("Envoyé") %></div>
           <% end %>
+            <div class="w-20"><%= image_tag("Envoyé") %></div>
         </p>
       </div>
     </div>
