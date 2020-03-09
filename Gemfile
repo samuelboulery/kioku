@@ -20,6 +20,7 @@ gem 'awesome_print'
 gem 'jquery'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
+gem 'devise_invitable', '~> 2.0.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

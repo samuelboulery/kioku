@@ -1,0 +1,60 @@
+<div class="full-container">
+
+
+<div class="container" id="container">
+    <div class="form-container photographer-container">
+        <%= form_for(@photographer, as: :photographer, url: session_path(:photographer)) do |f| %>
+        <!-- <div class="form"> -->
+        <h1>Sign in</h1>
+          <div class="form-inputs">
+            <%= f.label :email %><br>
+            <%= f.text_field :email, required: false, autofocus: true %>
+            <%= f.label :password %><br>
+            <%= f.password_field :password, required: false %>
+            <%# <%= f.check_box :remember_me, as: :boolean if Devise.mappings[:photographer].rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button "Log in" %>
+          </div>
+
+        <!-- </div> -->
+        <% end %>
+    </div>
+    <div class="form-container school-container">
+          <%= form_for(@school, as: :school, url: session_path(:school), class: "form") do |f| %>
+          <!-- <div class="form"> -->
+          <h1>Sign in</h1>
+            <div class="form-inputs">
+              <%= f.label :email %><br>
+              <%= f.text_field :email, required: false, autofocus: true %>
+              <%= f.label :password %><br>
+              <%= f.password_field :password, required: false %>
+              <%# <%= f.check_box :remember_me, as: :boolean if Devise.mappings[:school].rememberable? %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button "Log in" %>
+            </div>
+          <!-- </div> -->
+          <% end %>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+            <h1>Hey, <br>photographer!</h1>
+            <p>
+              Login to send your wonderfull pictures
+            </p>
+            <p class="change">Are you a school ? <a href="#" id="photographer">Click here</a></p>
+        </div>
+        <div class="overlay-panel overlay-left">
+            <h1>Hello, School</h1>
+            <p>Login to see your amazing students pictures</p>
+            <p class="change">Are you a photographer ? <a href="#" id="school">Click here</a></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+</div>

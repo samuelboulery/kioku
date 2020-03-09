@@ -1,9 +1,9 @@
 module.exports = {
   theme: {
-    borderRadius: {
+    extend: {
+      borderRadius: {
       'lg': '2rem'
     },
-    extend: {
       colors: {
         purple: "#7D07F2",
         red: "#FB4953",

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :schools, only: [:index, :show] do
       resources :classrooms, only: [:new, :create]
     end
+    post "schools/invite", to: "schools#invite"
     resources :classrooms, only: [:show, :edit, :update]
     authenticated :photographer do
       root :to => "schools#index"
@@ -23,14 +24,16 @@ Rails.application.routes.draw do
     authenticated :school do
       root :to => "schools#show"
     end
+
   end
+  get '/login' => 'pages#login'
 
 
 
   # resources :students, only: [:new, :create, :edit, :update]
   get "/consultation", to: "students#consultation" # >> consultation eleve
 
-  root to: redirect("/photographers/sign_in")
+  root to: 'pages#login'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
