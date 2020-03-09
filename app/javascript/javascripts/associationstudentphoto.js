@@ -1,4 +1,4 @@
-const associationStudentPhoto = (event, classroomId, studentId, photoId) => {
+const associationStudentPhoto = (event, studentId, photoId) => {
  const student = {
     student_id: studentId,
     photo_id: photoId,
