@@ -17,9 +17,9 @@ Rails.application.routes.draw do
       # resources :students, only: :index
       member do
         post :import
-        get :associate
       end
     end
+    resources :students, only: :update
     authenticated :school do
       root :to => "schools#show"
     end

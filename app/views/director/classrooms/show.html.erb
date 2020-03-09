@@ -13,12 +13,12 @@
 
 <!-- Students Photos -->
 <h2>Photos</h2>
-<div class="container-students">
+<div class="container-students" data-classroomid="<%= @classroom.id %>">
   <% if @classroom.photos.exists? %>
     <p>Photos Individuelles</p>
     <% @classroom.photos.each do |photo| %>
       <% if !photo.photo_type %>
-        <ul id="imgs">
+        <ul id="imgs" data-photoid="<%= photo.id %>">
           <li>
             <%= cl_image_tag photo.file.key, :transformation=>[
             {:width=>200, :height=>200, :crop=>"fill"},
@@ -26,7 +26,7 @@
             ] %>
             <div class="name-container">
               <p>sans nom</p>
-              <ul class="target">
+              <ul class="target" data-photoid="<%= photo.id %>">
 
               </ul>
             </div>
@@ -39,7 +39,7 @@
   <% end %>
   <ul id="names">
     <% @classroom.students.each do |student| %>
-      <li>
+      <li data-studentid="<%= student.id %>">
         <span class="names"><%= student.name %></span>
         <span class="email"><%= student.email %></span>
         <span class="close">X</span>

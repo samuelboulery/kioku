@@ -17,6 +17,9 @@ gem 'webpacker'
 gem 'devise'
 gem 'cloudinary'
 gem 'awesome_print'
+gem 'jquery'
+gem 'jquery-ui-rails'
+gem 'acts_as_list'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
