@@ -3,6 +3,6 @@ class Photographer < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :schools, dependent: :destroy
   has_many :classrooms, through: :schools
-  devise :invitable, :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
