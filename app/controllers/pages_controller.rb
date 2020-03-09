@@ -4,5 +4,7 @@ class PagesController < ApplicationController
   def login
     @photographer = Photographer.new
     @school = School.new
+    # Si erreur
+    # render :new
   end
 end

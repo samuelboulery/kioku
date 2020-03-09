@@ -15,37 +15,35 @@
   </div>
 </div>
 
-
 <div class=" flex mx-auto mr-48 justify-end">
   <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white absolute z-1 " style="margin-top: -118px">
     <div class="px-10 pt-6 pb-10">
-      <div class="text-4xl text-purple h-8">Hello</div>
-      <div class="font-bold text-4xl text-purple pb-2 border-b-2">Bernard</div>
+      <div class="text-4xl text-purple h-8 mb-2">Hello</div>
+      <div class="font-bold text-4xl text-purple pb-2 border-b-2"><%= current_photographer.fullname %></div>
       <div class="flex py-3 font-bold text-lg text-gray-500 justify-center">January</div>
       <div class="flex justify-between">
         <div class="flex justify-start">
           <p class="pt-3 text-lg text-gray-500">£ </p>
-          <p class="py-3 font-bold text-lg pl-1"> 3 309</p>
+          <p class="py-3 font-bold text-lg pl-1">3 309</p>
         </div>
         <div class="flex justify-end">
-          <p class="py-3 font-bold text-lg">280 </p>
+          <p class="py-3 font-bold text-lg">280</p>
           <p class="pt-3 text-lg text-gray-500 pl-1"> students</p>
         </div>
       </div>
       <div class="flex justify-between pb-3 border-b-2">
         <div class="flex justify-start">
-          <p class="py-3 font-bold text-lg pr-1">24 </p>
+          <p class="py-3 font-bold text-lg pr-1">24</p>
           <p class="pt-3 text-lg text-gray-500 pr-3"> classrooms</p>
         </div>
         <div class="flex justify-end">
-          <p class="py-3 font-bold text-lg">11 </p>
+          <p class="py-3 font-bold text-lg">11</p>
           <p class="pt-3 text-lg text-gray-500 pl-1"> schools</p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 
 <div class="w-3/4 mx-auto pt-12 pb-12">
@@ -65,23 +63,9 @@
   <% end %>
 </div>
 
-
-<!-- <div class="cbx">
-  <input id="cbx" type="checkbox"/>
-  <label for="cbx"></label>
-  <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
-    <path d="M2 8.36364L6.23077 12L13 2"></path>
-  </svg>
-</div>
-
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <defs>
-    <filter id="goo">
-      <fegaussianblur in="SourceGraphic" stddeviation="4" result="blur"></fegaussianblur>
-      <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo"></fecolormatrix>
-      <feblend in="SourceGraphic" in2="goo"></feblend>
-    </filter>
-  </defs>
-</svg>
-</div>
- -->
+<%= form_for(:school, url: professional_schools_invite_path) do |f| %>
+  <%= f.label :School_mail %> :
+  <%= f.text_field :email %>
+  <br>
+  <%= f.submit 'Send an invitation' %>
+<% end %>

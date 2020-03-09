@@ -5,6 +5,6 @@ class School < ApplicationRecord
   has_many :students, through: :classrooms
   belongs_to :photographer
 
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
