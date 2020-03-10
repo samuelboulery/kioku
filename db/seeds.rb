@@ -21,6 +21,7 @@ maternelle = School.new(
   password: "123456",
   address: "12 rue des petits, Lyon",
   photographer: albert,
+  category: 'nursery'
 )
 maternelle.save!
 
@@ -30,6 +31,7 @@ primaire = School.new(
   password: "123456",
   address: "12 rue des moyens, Lyon",
   photographer: albert,
+  category: 'elementary'
 )
 primaire.save!
 
@@ -39,6 +41,7 @@ college = School.new(
   password: "123456",
   address: "12 rue des grands, Lyon",
   photographer: michel,
+  category: 'comprehensive'
 )
 college.save!
 
