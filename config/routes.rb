@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :photographers, path: "photographers", skip: :sessions
+  devise_for :photographers, path: "photographers", skip: :sessions, controllers: { omniauth_callbacks: 'photographers/omniauth_callbacks' }
 
   as :photographer do
     get '/', to: 'devise/sessions#new', as: :new_photographer_session
