@@ -25,7 +25,7 @@
             {:overlay=>"sample_watermark_ijogba", :effect=>"brightness:20", :opacity=>100, :width=>0.3,}
             ] %>
             <div class="name-container">
-              <p>sans nom</p>
+              <p>Drag & drop the student here</p>
               <ul class="target" data-photoid="<%= photo.id %>">
 
               </ul>
@@ -39,7 +39,7 @@
   <% end %>
   <ul id="names">
     <% @classroom.students.each do |student| %>
-      <li data-studentid="<%= student.id %>">
+      <li data-studentid="<%= student.id %>" class="active">
         <span class="names"><%= student.name %></span>
         <span class="email"><%= student.email %></span>
         <span class="close">X</span>

@@ -1,11 +1,4 @@
-<div class="navbar">
-  <div class="logo" >
-    <%= image_tag("logo.svg", class:"w-12") %>
-  </div>
-  <a href="#" class="logout">Log out</a>
-</div>
-
-<div class="banner">
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
   <h1>School's Dashboard</h1>
   <div class="search">
     <%= form_tag(professional_schools_path, method: "get") do %>
@@ -37,7 +30,6 @@
         </div>
         <div class="select-none pb-3">Nursery school</div>
       </label>
-
       <style>
         input:checked + svg {
           display: block;
@@ -50,7 +42,6 @@
          </div>
          <div class="select-none pb-3">Elementary school</div>
       </label>
-
       <style>
         input:checked + svg {
           display: block;
@@ -63,7 +54,6 @@
          </div>
          <div class="select-none pb-3">Comprehensive school</div>
       </label>
-
       <style>
         input:checked + svg {
           display: block;
@@ -71,7 +61,6 @@
       </style>
     </div>
   </div>
-
   <div class="w-7/12 py-12 pl-20">
     <% @schools.each do |school| %>
     <div class="w-5/6 card-school" data-category="<%= school.category %>">
@@ -131,9 +120,5 @@
           </div>
     </div>
   </div>
-
     <div class="w-1/12 h-12"></div>
 </div>
-
-
-

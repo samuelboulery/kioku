@@ -10,10 +10,19 @@ if (studentsContainer) {
   targets.forEach(function(target) {
     new Sortable(target, {
       group: "words",
+      onChange: function (evt){
+        const name = document.querySelector('.name-container > p');
+        name.innerText = evt.item.innerText
+        const li = document.querySelector('.target');
+        console.log(li);
+        // document.querySelector(".name-container > p").innerText = evt.item.innerText;
+
+        li.classList.add("target-hidden");
+      },
       onAdd: function (evt){
-        console.log('1onAdd.bar:', evt);
-        console.log('student id', evt.item.dataset.studentid);
-        console.log('photo id', evt.target.dataset.photoid);
+        // console.log('1onAdd.bar:', evt);
+        // console.log('student id', evt.item.dataset.studentid);
+        // console.log('photo id', evt.target.dataset.photoid);
         associationStudentPhoto(evt, evt.item.dataset.studentid, evt.target.dataset.photoid);
       },
       onUpdate: function (evt){ console.log('1onUpdate.bar:', evt); },

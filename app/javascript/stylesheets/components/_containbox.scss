@@ -1,0 +1,9 @@
+.containbox {
+  padding-top: 1%;
+  margin-left: 18.5%;
+  display: grid;
+  width: 50%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10%;
+  grid-row-gap: 8%;
+}
