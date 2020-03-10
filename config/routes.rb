@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :photographers, path: "photographers"
-  devise_for :schools, path: "schools"
+  devise_for :photographers, path: "photographers", skip: :sessions
+
+  as :photographer do
+    get '/', to: 'devise/sessions#new', as: :new_photographer_session
+    post 'signin_photographer', to: 'devise/sessions#create', as: :photographer_session
+    delete 'signout_photographer', to: 'devise/sessions#destroy' 
+  end
+
+  devise_for :schools, path: "schools", skip: :sessions
+
+  as :school do
+    get '/', to: 'devise/sessions#new', as: :new_school_session
+    post 'signin_school', to: 'devise/sessions#create', as: :school_session
+    delete 'signout_school', to: 'devise/sessions#destroy' 
+  end
+
 
   namespace :professional do
     resources :schools, only: [:index, :show] do
@@ -33,7 +47,6 @@ Rails.application.routes.draw do
   # resources :students, only: [:new, :create, :edit, :update]
   get "/consultation", to: "students#consultation" # >> consultation eleve
 
-  root to: 'pages#login'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

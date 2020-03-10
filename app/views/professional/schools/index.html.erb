@@ -1,11 +1,4 @@
-<div class="navbar">
-  <div class="logo" >
-    <%= image_tag("logo.svg", class:"w-12") %>
-  </div>
-  <a href="#" class="logout">Log out</a>
-</div>
-
-<div class="banner">
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
   <h1>School's Dashboard</h1>
   <div class="search">
     <%= form_tag(professional_schools_path, method: "get") do %>
@@ -14,6 +7,7 @@
     <% end %>
   </div>
 </div>
+
 
 <div class="flex">
   <div class="w-2/12 py-12">
@@ -83,11 +77,13 @@
             <div class="text-gray-500"><%= school.address %></div>
           <% end %>
           </p>
-          <div class="w-20"><%= image_tag("Envoyé") %></div>
+          <div class="w-20"><%= image_tag("sent.png") %></div>
       </div>
     </div>
     <% end %>
   </div>
+
+
   <div class="w-2/12">
     <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 mb-16" style="margin-top: -118px">
       <div class="px-10 pt-6 pb-10">
@@ -132,7 +128,7 @@
     </div>
   </div>
 
-    <div class="w-1/12 h-12"></div>
+  <div class="w-1/12 h-12"></div>
 </div>
 
 
