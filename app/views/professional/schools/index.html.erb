@@ -76,8 +76,11 @@
             <div class="font-bold"><%= school.name %></div>
             <div class="text-gray-500"><%= school.address %></div>
           <% end %>
-          </p>
-          <div class="w-20"><%= image_tag("sent.png") %></div>
+          <div class="status light-<%= school.status %>">
+            <div class="pastille <%= school.status %>"></div>
+            <p><%= school.status %></p>
+          </div>
+        </p>
       </div>
     </div>
     <% end %>

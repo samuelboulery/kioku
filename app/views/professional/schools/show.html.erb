@@ -29,6 +29,14 @@
   </div>
 </div>
 
+<% if @school.uploads? %>
+<%= link_to professional_school_path(@school), method: :patch do %> <!-- status to be changed -->
+  <button class= "btn-pink"> Send pictures</button>
+  <!-- griser button ou alert-->
+  <% end %>
+<% end %>
+
+
 
 <div class="containbox">
   <div class="addfolder" >
