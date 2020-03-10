@@ -45,8 +45,8 @@
   </tbody>
 </table>
 
-<%= link_to professional_schools_path do %> <!-- status to be changed -->
+<% if current_school.validation? %>
+<%= link_to director_update_path, method: :post do%> <!-- status to be changed -->
   <button class= "btn-pink"> Validates all the classrooms</button>
-  <!-- griser button ou alert-->
   <% end %>
-
+<% end %>

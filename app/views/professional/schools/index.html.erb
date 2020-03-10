@@ -50,8 +50,10 @@
             <div class="font-bold"><%= school.name %></p></div>
             <div class="text-gray-500"><%= school.address %></div>
           <% end %>
-            <div class="w-20"><%= image_tag("sent.png") %></div>
-            <!-- if statut:  red upload (hover: waiting for pictures uploads photographer ) // orange asssociation (hover: waiting for the school validation) // green validated (hover sent to to parents)-->
+          <div class="status light-<%= school.status %>">
+            <div class="pastille <%= school.status %>"></div>
+            <p><%= school.status %></p>
+          </div>
         </p>
       </div>
     </div>

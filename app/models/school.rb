@@ -9,6 +9,7 @@ class School < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum status: {
+    nothing: "Nothing",
     uploads: "Uploads",
     validation: "Validation",
     validated: "Validated"
