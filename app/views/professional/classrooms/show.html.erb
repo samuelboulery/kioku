@@ -11,13 +11,13 @@
         <p>Photo de Groupe</p>
         <%= cl_image_tag photo.file.key, :transformation=>[
   {:width=>200, :height=>200, :crop=>"fill"},
-  {:overlay=>"sample_watermark_ijogba", :effect=>"brightness:20", :opacity=>100, :width=>0.3,}
+  {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:40", :opacity=>80, :width=>0.2,}
   ] %>
         <p>Photos Individuelles</p>
       <% else %>
         <%= cl_image_tag photo.file.key, :transformation=>[
   {:width=>200, :height=>200, :crop=>"fill"},
-  {:overlay=>"sample_watermark_ijogba", :effect=>"brightness:20", :opacity=>100, :width=>0.3,}
+  {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:40", :opacity=>80, :width=>0.2,}
   ] %>
       <% end %>
     <% end %>
