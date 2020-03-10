@@ -4,8 +4,8 @@
 </div>
 
 <%= link_to professional_schools_path do %>
-  <p class= "text-xl text-purple h-8 mt-4"> << Back to the list</p>
-  <% end %>
+<p class= "text-xl text-purple h-8 mt-4"> << Back to the list</p>
+<% end %>
 
 
 <div class=" flex mx-auto mr-48 justify-end">
@@ -38,21 +38,60 @@
 
 
 
+<div id="modal-container">
+  <div class="modal-background">
+    <div class="modal">
+      <div class="content-modal">
+        <h1>Add a new classroom</h1>
+        <%= form_for ([:professional, @school, @classroom]), html: {id: "drag"} do |f| %>
+        <div class="label-container">
+          <%= f.text_field :name , value:'New classroom' %>
+        </div>
+        <div class="label group">
+          <%= f.label :gphoto, 'Group Photo' %>
+          <div class="dragndrop-form">
+            <p class="inactive"><strong>Add or drop</strong> a group picture here</p>
+          </div>
+          <%= f.file_field :gphoto, direct_upload: true %>
+          <div class="files"></div>
+        </div>
+        
+        <div class="label individual">
+          <%= f.label :photos, 'Individual Photos' %>
+          <div class="dragndrop-form">
+            <p class="inactive"><strong>Add or drop</strong> some individuals pictures here</p>
+          </div>
+          <%= f.file_field :photos, multiple: true, direct_upload: true %>
+          <div class="files"></div>
+        </div>
+        <div id="buttons-container">
+          <a class="cancel" href="#"><p>Cancel</p></a>
+          <%= f.submit 'Create new classroom', class:'dng-btn' %>
+        </div>
+        <% end %>
+        <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+          <rect x="0" y="0" fill="none" width="226" height="162" rx="10" ry="10"></rect>
+        </svg>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
 <div class="containbox">
-  <div class="addfolder" >
-    <%= link_to new_professional_school_classroom_path(@school) do %>
+  <div class="addfolder button" id="test" >
+    <!-- <%= link_to new_professional_school_classroom_path(@school) do %> -->
     <%= image_tag("add_folder.svg") %>
-    <% end %>
+    <!-- <% end %> -->
   </div>
 
   <% @school.classrooms.each do |classroom| %>
     <%= link_to professional_classroom_path(classroom.id) do %>
-      <div class="folder-svg shadow-xl rounded-md h-24">
+      <div class="folder-svg shadow-xl rounded-md h-32">
         <%= render "shared/folder_svg", color: ["purple", "green", "yellow", "red"].sample %>
         <p class="flex font-bold text-black m pl-5" style="margin-top: -35%"><%= classroom.name %></p>
       </div>
     <% end %>
   <% end %>
 </div>
-
 

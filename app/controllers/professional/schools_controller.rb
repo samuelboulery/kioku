@@ -7,6 +7,7 @@ class Professional::SchoolsController < Professional::ApplicationController
 
   def show
     @school = current_photographer.schools.find(params[:id])
+    @classroom = Classroom.new
   end
 
   def invite
