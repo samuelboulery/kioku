@@ -13,3 +13,5 @@ require("channels")
 import "../javascripts/index"
 import "../stylesheets/application.scss"
 import "../javascripts/login"
+import "../javascripts/schoolfilter"
+

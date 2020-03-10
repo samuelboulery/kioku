@@ -1,11 +1,4 @@
-<div class="navbar">
-  <div class="logo" >
-    <%= image_tag("logo.svg", class:"w-12") %>
-  </div>
-  <a href="#" class="logout">Log out</a>
-</div>
-
-<div class="banner">
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
   <h1>School's Dashboard</h1>
   <h2>Manage your classrooms folder below</h2>
 </div>
@@ -46,7 +39,7 @@
 
 
 <div class="containbox">
-  <div class="add_folder" >
+  <div class="addfolder" >
     <%= link_to new_professional_school_classroom_path(@school) do %>
     <%= image_tag("add_folder.svg") %>
     <% end %>
@@ -54,7 +47,7 @@
 
   <% @school.classrooms.each do |classroom| %>
     <%= link_to professional_classroom_path(classroom.id) do %>
-      <div class="folder-svg shadow-xl rounded-md h-24 ">
+      <div class="folder-svg shadow-xl rounded-md h-24">
         <%= render "shared/folder_svg", color: ["purple", "green", "yellow", "red"].sample %>
         <p class="flex font-bold text-black m pl-5" style="margin-top: -35%"><%= classroom.name %></p>
       </div>

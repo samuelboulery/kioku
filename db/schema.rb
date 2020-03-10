@@ -87,7 +87,11 @@ ActiveRecord::Schema.define(version: 2020_03_10_091852) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+<<<<<<< HEAD
     t.string "status"
+=======
+    t.string "category"
+>>>>>>> master
     t.index ["email"], name: "index_schools_on_email", unique: true
     t.index ["invitation_token"], name: "index_schools_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_schools_on_invitations_count"
