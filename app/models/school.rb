@@ -7,4 +7,10 @@ class School < ApplicationRecord
 
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  enum status: {
+    uploads: "Uploads",
+    validation: "Validation",
+    validated: "Validated"
+  }
 end
