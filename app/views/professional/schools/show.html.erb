@@ -7,34 +7,36 @@
 <p class= "text-xl text-purple h-8 mt-4"> << Back to the list</p>
 <% end %>
 
+  <% if @school.uploads? %>
+<%= link_to professional_school_path(@school), method: :patch do %>
+<button class="btn btn-pink mt-16 mr-2"> Send pictures</button>
+<% end %>
+<% end %>
 
-<div class=" flex mx-auto mr-48 justify-end">
-  <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white absolute z-1 " style="margin-top: -140px">
-    <div class="px-10 pt-6 pb-10">
+
+<div class="flex mx-auto mr-40 justify-end">
+  <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white absolute z-1 mb-16 px-10" style="margin-top: -172px">
+    <div class="px-6 pt-6 pb-10">
       <div class="text-4xl text-purple h-8">School</div>
-      <div class="font-bold text-4xl text-purple pb-8 border-b-2"><%= @school.name %></div>
+      <div class="font-bold text-4xl text-purple pb-4 border-b-2"><%= @school.name %></div>
       <div class="flex py-3 font-bold text-lg justify-start pt-4">Address:</div>
       <div class="flex justify-between">
         <div class="flex justify-start">
-          <p class="pt-3 text-lg text-gray-500 pb-8 border-b-2"><%= @school.address %></p>
+          <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.address %></p>
         </div>
       </div>
       <div class="flex py-3 font-bold text-lg justify-start pt-4">Contact:</div>
       <div class="flex justify-between">
         <div class="flex justify-start">
-          <p class="pt-3 text-lg text-gray-500 pb-8 border-b-2"><%= @school.email %></p>
+          <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.email %></p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<% if @school.uploads? %>
-<%= link_to professional_school_path(@school), method: :patch do %> <!-- status to be changed -->
-  <button class= "btn-pink"> Send pictures</button>
-  <!-- griser button ou alert-->
-  <% end %>
-<% end %>
+
+
 
 
 
@@ -55,13 +57,13 @@
           <%= f.file_field :gphoto, direct_upload: true %>
           <div class="files"></div>
         </div>
-        
+
         <div class="label individual">
           <%= f.label :photos, 'Individual Photos' %>
           <div class="dragndrop-form">
             <p class="inactive"><strong>Add or drop</strong> some individuals pictures here</p>
           </div>
-          <%= f.file_field :photos, multiple: true, direct_upload: true %>
+            <%= f.file_field :photos, multiple: true, direct_upload: true %>
           <div class="files"></div>
         </div>
         <div id="buttons-container">
@@ -72,7 +74,7 @@
         <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
           <rect x="0" y="0" fill="none" width="226" height="162" rx="10" ry="10"></rect>
         </svg>
-      </div> 
+      </div>
     </div>
   </div>
 </div>
@@ -89,9 +91,18 @@
     <%= link_to professional_classroom_path(classroom.id) do %>
       <div class="folder-svg shadow-xl rounded-md h-32">
         <%= render "shared/folder_svg", color: ["purple", "green", "yellow", "red"].sample %>
-        <p class="flex font-bold text-black m pl-5" style="margin-top: -35%"><%= classroom.name %></p>
+          <p class="flex font-bold text-black m pl-5" style="margin-top: -35%"><%= classroom.name %></p>
+
+        <% if classroom.photos.exists? %>
+          <h2 class="flex text-md text-gray-500 pl-5"><%= classroom.photos.count %> pictures</h2>
+        <% else %>
+          <h2 class="flex text-md text-gray-500 pl-5">No pictures</h2>
+        <% end %>
       </div>
     <% end %>
   <% end %>
+
 </div>
+
+
 
