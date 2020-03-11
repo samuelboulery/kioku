@@ -27,16 +27,12 @@
 
   </div>
   </div>
-    <button class="btn btn-pink mt-16 mr-2">
-  Validate all classrooms
-</button>
+<% if current_school.validation? %>
+<%= link_to director_update_path, method: :post do%> <!-- status to be changed -->
+  <button class= "btn btn-pink mt-16 mr-2"> Validates all the classrooms</button>
+  <% end %>
+<% end %>
 </div>
-
-
-
-
-
-
 
 <div class="containbox">
   <% @classrooms.each do |classroom| %>
@@ -48,5 +44,6 @@
     <% end %>
   <% end %>
 </div>
+
 
 

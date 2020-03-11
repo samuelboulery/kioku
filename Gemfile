@@ -21,6 +21,7 @@ gem 'jquery'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'devise_invitable', '~> 2.0.0'
+gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
