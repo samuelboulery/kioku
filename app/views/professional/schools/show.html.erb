@@ -6,7 +6,6 @@
 <%= link_to professional_schools_path do %>
 <p class= "text-xl text-purple h-8 mt-4"> << Back to the list</p>
 <% end %>
-
   <% if @school.uploads? %>
 <%= link_to professional_school_path(@school), method: :patch do %>
 <button class="btn btn-pink mt-16 mr-2"> Send pictures</button>
