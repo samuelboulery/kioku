@@ -1,5 +1,4 @@
 const directUploads = () => {
-  console.log("Coucou");
   // var pactive = document.querySelector('.inactive');
   // pactive.classList.add('inactive');
   addEventListener("direct-upload:initialize", event => {

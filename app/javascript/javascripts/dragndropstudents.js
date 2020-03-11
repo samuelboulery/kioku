@@ -7,18 +7,19 @@ if (studentsContainer) {
   const photos = document.querySelector('#imgs');
   const names = document.querySelector('#names');
   const targets = document.querySelectorAll('.target');
+  //   const name = document.querySelector('.name-container > p');
   targets.forEach(function(target) {
     new Sortable(target, {
       group: "words",
-      onChange: function (evt){
-        const name = document.querySelector('.name-container > p');
-        name.innerText = evt.item.innerText
-        const li = document.querySelector('.target');
-        console.log(li);
-        // document.querySelector(".name-container > p").innerText = evt.item.innerText;
+      // onChange: function (evt){
+      //   const name = document.querySelector('.name-container > p');
+      //   name.innerText = evt.item.innerText
+      //   const li = document.querySelector('.target');
+      //   console.log(li);
+      //   // document.querySelector(".name-container > p").innerText = evt.item.innerText;
 
-        li.classList.add("target-hidden");
-      },
+      //   li.classList.add("target-hidden");
+      // },
       onAdd: function (evt){
         // console.log('1onAdd.bar:', evt);
         // console.log('student id', evt.item.dataset.studentid);
@@ -31,12 +32,8 @@ if (studentsContainer) {
   });
   new Sortable(names, {
     group: "words",
-    onAdd: function (evt){
-      console.log('2onAdd.foo:', evt);
-
-    },
+    onAdd: function (evt){ console.log('2onAdd.foo:', evt); },
     onUpdate: function (evt){ console.log('2onUpdate.foo:', evt); },
     onRemove: function (evt){ console.log('2onRemove.foo:', evt); }
   });
-
 }
