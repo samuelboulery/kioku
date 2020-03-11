@@ -3,45 +3,38 @@
   <h2>Manage your classrooms folder below</h2>
 </div>
 
-
-<%= link_to professional_schools_path do %>
-  <p class= "text-xl text-purple h-8 mt-4 font-bold pl-16">Back to your class list</p>
-<% end %>
-
-
-
-  <% if @school.uploads? %>
-<%= link_to professional_school_path(@school), method: :patch do %>
-<button class="btn btn-pink mt-16 mr-2"> Send pictures</button>
-<% end %>
-<% end %>
-
-
-<div class="flex mx-auto mr-40 justify-end">
-  <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white absolute z-1 mb-16 px-6" style="margin-top: -172px">
-    <div class="px-6 pt-6 pb-10">
-      <div class="text-4xl text-purple h-8">School</div>
-      <div class="font-bold text-4xl text-purple pb-4 border-b-2"><%= @school.name %></div>
-      <div class="flex py-3 font-bold text-lg justify-start pt-4">Address:</div>
-      <div class="flex justify-between">
-        <div class="flex justify-start">
-          <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.address %></p>
-        </div>
-      </div>
-      <div class="flex py-3 font-bold text-lg justify-start pt-4">Contact:</div>
-      <div class="flex justify-between">
-        <div class="flex justify-start">
-          <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.email %></p>
-        </div>
-      </div>
+<div class="flex absolute right-0 mr-48">
+    <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 w-full" style="margin-top: -145px">
+      <div class="px-12 pt-6 pb-10">
+        <div class="text-4xl text-purple h-8">School</div>
+        <div class="font-bold text-4xl text-purple pb-8 border-b-2"><%= @school.name %></div>
+        <div class="flex py-3 font-bold text-lg justify-start pt-4">Address:</div>
+          <div class="flex justify-between">
+            <div class="flex justify-start">
+              <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.address %></p>
+            </div>
+          </div>
+        <div class="flex py-3 font-bold text-lg justify-start pt-4">Contact:</div>
+          <div class="flex justify-between">
+            <div class="flex justify-start">
+              <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.email %></p>
+            </div>
+          </div>
     </div>
   </div>
 </div>
-
-
-
-
-
+<div class="absolute right-0 mt-64">
+  <% if @school.uploads? %>
+    <%= link_to professional_school_path(@school), method: :patch do %>
+      <button class="btn btn-pink mt-8 w-64" style="margin-right: 205px"> Send pictures</button>
+    <% end %>
+  <% end %>
+  <div class="link">
+  <%= link_to professional_schools_path do %>
+    <p class= "text-xl text-purple font-bold h-8 mt-4" style="margin-left: 55px">Back to the list</p>
+  <% end %>
+</div>
+  </div>
 
 <div id="modal-container">
   <div class="modal-background">
@@ -82,30 +75,28 @@
   </div>
 </div>
 
-
 <div class="containbox">
   <div class="addfolder button" id="test" >
-    <!-- <%= link_to new_professional_school_classroom_path(@school) do %> -->
     <%= image_tag("add_folder.svg") %>
-    <!-- <% end %> -->
   </div>
+    <% @school.classrooms.each do |classroom| %>
+      <%= link_to professional_classroom_path(classroom.id) do %>
+        <div class="folder-svg shadow-xl rounded-md h-32">
+          <%= render "shared/folder_svg", color: ["purple", "green", "yellow", "red"].sample %>
+            <p class="flex font-bold text-black m pl-5" style="margin-top: -35%"><%= classroom.name %></p>
 
-  <% @school.classrooms.each do |classroom| %>
-    <%= link_to professional_classroom_path(classroom.id) do %>
-      <div class="folder-svg shadow-xl rounded-md h-32">
-        <%= render "shared/folder_svg", color: ["purple", "green", "yellow", "red"].sample %>
-          <p class="flex font-bold text-black m pl-5" style="margin-top: -35%"><%= classroom.name %></p>
-
-        <% if classroom.photos.exists? %>
-          <h2 class="flex text-md text-gray-500 pl-5"><%= classroom.photos.count %> pictures</h2>
-        <% else %>
-          <h2 class="flex text-md text-gray-500 pl-5">No pictures</h2>
-        <% end %>
-      </div>
+          <% if classroom.photos.exists? %>
+            <h2 class="flex text-md text-gray-500 pl-5"><%= classroom.photos.count %> pictures</h2>
+          <% else %>
+            <h2 class="flex text-md text-gray-500 pl-5">No pictures</h2>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-
 </div>
+
+
+
 
 
 
