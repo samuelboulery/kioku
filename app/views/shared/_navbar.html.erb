@@ -1,3 +1,4 @@
+<% if !current_page?(new_photographer_session_path) %>
 <div class="navbar">
   <div class="logo" >
     <%= image_tag("logo.svg", class:"w-12") %>
@@ -8,3 +9,4 @@
     <%= button_to "Log out", signout_school_path, method: :delete, class: "button-logout" %>
   <% end %>
 </div>
+<% end %>
