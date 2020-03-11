@@ -9,11 +9,15 @@
         <h1>Sign in photographer</h1>
 
         <div class="form-inputs">
-          <%= f.label :email %><br>
+          <%= f.label :email, class: "shadow-lg" %><br>
           <%= f.text_field :email, required: false, autofocus: true %>
-          <%= f.label :password %><br>
+          <%= f.label :password, class: "shadow-lg" %><br>
           <%= f.password_field :password, required: false %>
           <%# <%= f.check_box :remember_me, as: :boolean if Devise.mappings[:photographer].rememberable? %>
+        </div>
+
+        <div class="flex bg-white h-10 w-56 rounded-md shadow-lg mt-6 justify-center">
+          <%= f.button "Log in" %>
         </div>
 
         <div class="flex bg-white h-10 w-56 rounded-md shadow-lg items-center mt-6">
@@ -25,9 +29,7 @@
           <% end %>
         </div>
 
-        <div class="flex bg-white h-10 w-56 rounded-md shadow-lg mt-6 justify-center">
-          <%= f.button "Log in" %>
-        </div>
+
 
         <!-- </div> -->
       <% end %>
@@ -41,14 +43,14 @@
         <!-- <div class="form"> -->
           <h1>Sign in <br> school</h1>
           <div class="form-inputs">
-            <%= f.label :email %><br>
+            <%= f.label :email, class: "shadow-lg" %><br>
             <%= f.text_field :email, required: false, autofocus: true %>
-            <%= f.label :password %><br>
+            <%= f.label :password, class: "shadow-lg" %><br>
             <%= f.password_field :password, required: false %>
             <%# <%= f.check_box :remember_me, as: :boolean if Devise.mappings[:school].rememberable? %>
           </div>
 
-          <div class="form-actions">
+          <div class="flex bg-white h-10 w-56 rounded-md shadow-lg mt-6 justify-center">
             <%= f.button "Log in" %>
           </div>
           <!-- </div> -->
