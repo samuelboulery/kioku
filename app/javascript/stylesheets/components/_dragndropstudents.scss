@@ -13,13 +13,17 @@
   justify-content: space-around;
 }
 
-li {
-  border: 1px solid black;
-}
-
 .target {
   // background: yellow;
-  height: 30px;
+  // height: 230px;
+}
+
+.target .dropable-student {
+  order: 3;
+}
+
+.dropable-student ~ .dnd-placeholder {
+  display: none;
 }
 
 .target-hidden {
@@ -30,7 +34,10 @@ li {
   display: none;
 }
 
-#imgs .email {
-  display: none;
+.target .close {
+  display: block;
 }
 
+.target .email {
+  display: none;
+}
