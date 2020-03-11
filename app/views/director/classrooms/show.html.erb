@@ -1,15 +1,82 @@
-<h1><%= "Import students to your => #{@classroom.name}" %></h1>
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
+  <h1>Dashboard</h1>
+  <h2>Manage your classrooms folder below</h2>
+</div>
 
-<br>
-
-<%= form_for(:director, url: import_director_classroom_path) do |f| %>
-  <%= f.file_field :csv %>
-  <%= f.submit 'Save' %>
-<% end %>
-
+<!-- TODO : CLEMENCE VA FAIRE UN LIEN SPECIAL LE PLACER A LA PLACE -->
 <%= link_to director_root_path do %>
-  <p>Back to your dashboard</p>
-<% end %>
+  <p class= "text-xl text-purple h-8 mt-4"> << Back to the dashboard</p>
+  <% end %>
+
+<!-- TODO : MARIE INSERER LES PHOTOS AVEC CE SCHEMA CI DESSOUS -->
+<div class="flex">
+  <div class="w-7/12 py-12">
+    <div class="flex justify-between px-24">
+      <div class="grid grid-cols-5 gap-4">
+        <div class="col-span-1 ...">
+          <div class="rounded overflow-hidden shadow-md">
+            <img class="object-contain" src="https://images.unsplash.com/photo-1583356760417-a377a3756414?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80">
+              <div class="relative flex text-start">
+                <p class="pl-2 py-1 pr-5">Jean-François Dupont Lavargne</p>
+                <span class="absolute top-0 bottom-0 right-0 pl-6">
+                <svg class="fill-current h-6 w-6 text-red" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                </span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-2/12 pt-12 mr-20">
+    <div class="text-center">
+      <%= form_for(:director, url: import_director_classroom_path) do |f| %>
+        <label class="relative btn btn-white block mb-4" data-dropzone>
+          <span id="files">Drop a CSV file or click</span>
+          <%= f.file_field :csv, class: "left-0 top-0 opacity-0 bottom-0 absolute" %>
+        </label>
+        <%= f.submit 'Save', class: "btn btn-pink px-16" %>
+      <% end %>
+    </div>
+
+    <div class="max-w-xs rounded-lg overflow-y-auto h-64 shadow mt-16">
+      <div class="px-10 py-6">
+        <% @classroom.students.each do |student| %>
+        <p class="font-bold"><%= student.name %></p>
+        <p class="text-gray-500"><%= student.email %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-2/12">
+    <div class="max-w-xs rounded-md overflow-hidden shadow bg-white z-1 mb-16" style="margin-top: -140px">
+      <div class="px-10 pt-6 pb-10">
+        <div class="text-3xl text-purple h-8">School
+        </div>
+        <div class="font-bold text-3xl text-purple pb-2 border-b-2">W.Churchil
+        </div>
+        <div class="flex justify-between">
+          <div class="py-3 font-bold text-lg">Your profit :
+          </div>
+          <div class="py-3 font-bold text-lg">£ 3 309
+          </div>
+        </div>
+        <p class="border-t-2 py-3 font-bold text-lg">Photographer :</p>
+        <p class="text-gray-500">Mr Bernard Lermitte</p>
+        <p class="text-gray-500">+44 20 7687 2933</p>
+        <p class="text-gray-500 pb-3 border-b-2">berny.mimite@gmail.com</p>
+      </div>
+    </div>
+
+    <!-- TODO : METTRE LE LIEN AVEC LA CREATION -->
+    <div class="text-center">
+      <button class="btn btn-pink">Validate a classroom</button>
+    </div>
+  </div>
+
+  <div class="w-1/12 h-12"></div>
+</div>
 
 <!-- Students Photos -->
 <h2>Photos</h2>
@@ -48,32 +115,3 @@
   </ul>
 </div>
 <br>
-
-
-<div class="text-gray-900 bg-gray-200">
-    <div class="p-4 flex">
-        <h1 class="text-3xl">
-            <%= "#{@classroom.students.count} students in the classroom #{@classroom.name} :" %>
-        </h1>
-    </div>
-    <div class="px-3 py-4 flex justify-center">
-        <table class="w-full text-md bg-white shadow-md rounded mb-4">
-            <tbody>
-                <tr class="border-b">
-                    <th class="text-left p-3 px-5">Name</th>
-                    <th class="text-left p-3 px-5">Email</th>
-                    <th></th>
-                </tr>
-                <% @classroom.students.each do |student| %>
-                <tr class="border-b hover:bg-purple-100 bg-gray-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"><%= student.name %></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"><%= student.email %></td>
-                    <td class="p-3 px-5">
-                    </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
-</div>

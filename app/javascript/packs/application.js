@@ -14,4 +14,4 @@ import "../javascripts/index"
 import "../stylesheets/application.scss"
 import "../javascripts/login"
 import "../javascripts/schoolfilter"
-
+import "../javascripts/dropzone"
