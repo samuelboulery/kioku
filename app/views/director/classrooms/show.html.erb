@@ -3,7 +3,6 @@
   <h2>Manage your classrooms folder below</h2>
 </div>
 
-<!-- TODO : CLEMENCE VA FAIRE UN LIEN SPECIAL LE PLACER A LA PLACE -->
 <%= link_to director_root_path do %>
   <p class= "text-xl text-purple h-8 mt-4 font-bold pl-16">Back to the class manager</p>
   <% end %>
@@ -40,7 +39,7 @@
   <div class="w-2/12 pt-12 mr-20">
     <div class="text-center">
       <%= form_for(:director, url: import_director_classroom_path) do |f| %>
-        <label class="bg-gray-100 border-dashed border-4 border-gray-400 relative rounded-sm overflow-y-auto h-32 shadow block mb-4" data-dropzone>
+        <label class="bg-gray-100 border-dashed border-4 border-gray-400 relative rounded-sm h-32 shadow block mb-4" data-dropzone>
           <span class="text-gray-800 flex justify-center pt-12" id="files">Drop a CSV file or click</span>
           <%= f.file_field :csv, class: "left-0 top-0 opacity-0 bottom-0 absolute" %>
         </label>
@@ -48,6 +47,11 @@
       <% end %>
     </div>
 
+
+  <!-- ****if -->
+  <% if !@classroom.students.exists? %>
+    <div id="names" class="px-10 py-6"></div>
+  <% else %>
     <div class="max-w-xs rounded-sm overflow-y-auto h-64 shadow mt-16">
       <div id="names" class="px-10 py-6">
         <% @classroom.students.each do |student| %>
@@ -61,10 +65,14 @@
         <% end %>
       </div>
     </div>
+  <% end %>
+  <!-- ****end -->
   </div>
 
+
+
   <div class="w-2/12">
-    <div class="max-w-xs rounded-md overflow-hidden shadow bg-white z-1 mb-16" style="margin-top: -140px">
+    <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 mb-16" style="margin-top: -140px">
       <div class="px-10 pt-6 pb-10">
         <div class="text-3xl text-purple h-8">School
         </div>
