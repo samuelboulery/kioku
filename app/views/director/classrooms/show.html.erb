@@ -3,12 +3,10 @@
   <h2>Manage your classrooms folder below</h2>
 </div>
 
-<!-- TODO : CLEMENCE VA FAIRE UN LIEN SPECIAL LE PLACER A LA PLACE -->
 <%= link_to director_root_path do %>
-  <p class= "text-xl text-purple h-8 mt-4"> << Back to the dashboard</p>
+  <p class= "text-xl text-purple h-8 mt-4 font-bold pl-16">Back to the class manager</p>
   <% end %>
 
-<!-- TODO : MARIE INSERER LES PHOTOS AVEC CE SCHEMA CI DESSOUS -->
 <div class="flex" data-init-student-dnd>
   <div class="w-7/12 py-12">
     <div class="flex justify-between px-24">
@@ -26,7 +24,7 @@
                 )
               %>
               <div class="relative dnd-placeholder flex justify-center">
-                <p class="py-2">Drag n drop here</p>
+                <p class="py-2 text-gray-800">Drag name here</p>
               </div>
             </div>
             <% end %>
@@ -41,20 +39,25 @@
   <div class="w-2/12 pt-12 mr-20">
     <div class="text-center">
       <%= form_for(:director, url: import_director_classroom_path) do |f| %>
-        <label class="relative btn btn-white block mb-4" data-dropzone>
-          <span id="files">Drop a CSV file or click</span>
+        <label class="bg-gray-100 border-dashed border-4 border-gray-400 relative rounded-sm h-32 shadow block mb-4" data-dropzone>
+          <span class="text-gray-800 flex justify-center pt-12" id="files">Drop a CSV file or click</span>
           <%= f.file_field :csv, class: "left-0 top-0 opacity-0 bottom-0 absolute" %>
         </label>
-        <%= f.submit 'Save', class: "btn btn-pink px-16" %>
+        <%= f.submit 'Import', class: "btn btn-pink px-16" %>
       <% end %>
     </div>
 
-    <div class="max-w-xs rounded-lg overflow-y-auto h-64 shadow mt-16">
+
+  <!-- ****if -->
+  <% if !@classroom.students.exists? %>
+    <div id="names" class="px-10 py-6"></div>
+  <% else %>
+    <div class="max-w-xs rounded-sm overflow-y-auto h-64 shadow mt-16">
       <div id="names" class="px-10 py-6">
         <% @classroom.students.each do |student| %>
           <div class="relative dropable-student" data-studentid="<%= student.id %>">
-            <p class="font-bold"><%= student.name %></p>
-            <p class="email text-gray-500"><%= student.email %></p>
+            <p class="font-bold py-2 pl-2 pr-5"><%= student.name %></p>
+            <p class="email text-gray-500 pl-2 pr-5" style="margin-top: -10px"><%= student.email %></p>
             <span class="hidden close absolute top-0 bottom-0 right-0 pl-6">
               <svg class="fill-current h-6 w-6 text-red" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
             </span>
@@ -62,10 +65,14 @@
         <% end %>
       </div>
     </div>
+  <% end %>
+  <!-- ****end -->
   </div>
 
+
+
   <div class="w-2/12">
-    <div class="max-w-xs rounded-md overflow-hidden shadow bg-white z-1 mb-16" style="margin-top: -140px">
+    <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 mb-16" style="margin-top: -140px">
       <div class="px-10 pt-6 pb-10">
         <div class="text-3xl text-purple h-8">School
         </div>
@@ -74,7 +81,7 @@
         <div class="flex justify-between">
           <div class="py-3 font-bold text-lg">Your profit :
           </div>
-          <div class="py-3 font-bold text-lg">£ 3 309
+          <div class="py-3 font-bold text-lg">£ 309
           </div>
         </div>
         <p class="border-t-2 py-3 font-bold text-lg">Photographer :</p>

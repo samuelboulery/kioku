@@ -1,0 +1,5 @@
+meta_product_name: "Kioku"
+meta_title: "Kioku - Un souvenir à portée de clic"
+meta_description: "Kioku, la plateforme simple et pratique pour les photographes scolaires. Supprimez un intermédiaire et fluidifiez les échanges avec les écoles et les parents."
+meta_image: "og-image.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
