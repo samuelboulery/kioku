@@ -13,20 +13,26 @@
   <div class="w-7/12 py-12">
     <div class="flex justify-between px-24">
       <div class="grid grid-cols-5 gap-4">
-        <% @classroom.photos.each do |photo| %>
-          <div data-photoid="<%= photo.id %>" class="target flex flex-col rounded overflow-hidden shadow-md">
-            <%= cl_image_tag(photo.file.key,
-                transformation: [
-                  { width: 200, height: 200, crop: "fill" },
-                  { overlay: "kioku_watermark_vhbs35", effect: "brightness:20", opacity: 100, width: 0.3 },
-                ],
-                class: 'object-contain'
-              )
-            %>
-            <div class="relative dnd-placeholder flex justify-center">
-              <p class="py-2">Drag n drop here</p>
+        <% if @classroom.photos.exists? %>
+          <% @classroom.photos.each do |photo| %>
+           <% if !photo.photo_type %>
+            <div data-photoid="<%= photo.id %>" class="target flex flex-col rounded overflow-hidden shadow-md">
+              <%= cl_image_tag(photo.file.key,
+                  transformation: [
+                    { width: 200, height: 200, crop: "fill" },
+                    { overlay: "kioku_watermark_vhbs35", effect: "brightness:20", opacity: 100, width: 0.3 },
+                  ],
+                  class: 'object-contain'
+                )
+              %>
+              <div class="relative dnd-placeholder flex justify-center">
+                <p class="py-2">Drag n drop here</p>
+              </div>
             </div>
-          </div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <p> There is no picture uploaded yet!</p>
         <% end %>
       </div>
     </div>
