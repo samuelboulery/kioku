@@ -1,11 +1,14 @@
-<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
-  <h1>Tableau de bord</h1>
-  <h2>Gérer les dossiers des classes</h2>
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner relative">
+  <div class="title-banner">
+    <h1>Tableau de bord</h1>
+    <h2>Gérer les dossiers des classes</h2>
+  </div>
+  <div id="particles-js"></div>
 </div>
 
 <%= link_to director_root_path do %>
   <p class= "text-xl text-purple h-8 mt-4 font-bold pl-16">Retour aux classes</p>
-  <% end %>
+<% end %>
 
 <div class="flex" data-init-student-dnd>
   <div class="w-2/12 h-12"></div>
