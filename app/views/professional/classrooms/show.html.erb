@@ -1,10 +1,13 @@
-<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
-  <h1><%= @classroom.name %></h1>
-  <% if @classroom.photos.exists? %>
-  <h2><%= @classroom.photos.count %> photos</h2>
-  <% else %>
-  <h2>Vide</h2>
-  <% end %>
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner relative">
+  <div class="title-banner">
+    <h1><%= @classroom.name %></h1>
+    <% if @classroom.photos.exists? %>
+    <h2><%= @classroom.photos.count %> photos</h2>
+    <% else %>
+    <h2>Vide</h2>
+    <% end %>
+  </div>
+  <div id="particles-js"></div>
 </div>
 
 <div class="container-show">

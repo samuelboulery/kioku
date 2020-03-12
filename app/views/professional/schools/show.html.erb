@@ -9,22 +9,27 @@
 <div class="flex absolute right-0 mr-40">
     <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 w-full" style="margin-top: -145px">
       <div class="px-12 pt-6 pb-10">
-        <div class="font-bold text-4xl text-purple pb-4 border-b-2"><%= @school.name %></div>
-        <div class="flex py-3 font-bold text-lg justify-start pt-4">Adresse:</div>
-          <div class="flex justify-between">
-            <div class="flex justify-start">
-              <p class="text-lg text-gray-500 pb-4 border-b-2"><%= @school.address %></p>
-            </div>
-          </div>
-        <div class="flex py-3 font-bold text-lg justify-start pt-4">Contact:</div>
-          <div class="flex justify-start">
-              <div class="text-lg text-gray-500 pb-4"><%= @school.email %></div>
-              <div class="pt-3 text-lg text-gray-500 pb-4"><%= @school.phone_number %></div>
-              <div class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.referrer_name %></div>
-          </div>
-        </div>
+          <div class="font-bold text-4xl text-purple pb-4 border-b-2"><%= @school.name %></div>
+          <div class="flex py-3 font-bold text-lg justify-start pt-4">Adresse:</div>
+              <div class="flex justify-start">
+                <p class="text-lg text-gray-500 pb-4"><%= @school.address %></p>
+              </div>
+               <div class="border-b-2"></div>
+            <div class="flex py-3 font-bold text-lg justify-start pt-4">Contact:</div>
+              <div class="flex justify-start">
+                <p class="text-lg text-gray-500"><%= @school.email %></p>
+              </div>
+
+              <div class="flex justify-start">
+                <p class="text-lg text-gray-500"><%= @school.phone_number %></p>
+              </div>
+
+              <div class="flex justify-start">
+                <p class="text-lg text-gray-500 pb-6"><%= @school.referrer_name %></p>
+              </div>
+            <div class=" border-b-2"></div>
+      </div>
     </div>
-  </div>
 </div>
 
   <div class="absolute left-0 mt-8">
@@ -39,7 +44,7 @@
 <div class="absolute right-0 mt-64">
   <% if @school.chargement? %>
     <%= button_to professional_school_path(@school), method: :patch do %>
-      <button class="btn btn-pink mt-8 px-16", style="margin-right: 175px"> Envoyer vos photos</button>
+      <button class="btn btn-pink mt-8 px-16", style="margin-right: 185px"> Envoyer vos photos</button>
     <% end %>
   <% end %>
 </div>
