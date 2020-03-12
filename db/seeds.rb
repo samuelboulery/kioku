@@ -10,7 +10,7 @@ paul = Photographer.new(
 paul.save!
 
 
-maternelle = School.new(
+maternellea = School.new(
   name: "Ecole Jean Rostand",
   email: "mat@school.com",
   password: "123456",
@@ -20,9 +20,9 @@ maternelle = School.new(
   phone_number: "04.78.64.25.05",
   referrer_name: "M. Seeds"
 )
-maternelle.save!
+maternellea.save!
 
-primaire = School.new(
+elementaire = School.new(
   name: "Ecole Louis Pradel",
   email: "prim@school.com",
   password: "123456",
@@ -32,10 +32,10 @@ primaire = School.new(
   phone_number: "04.78.64.25.07",
   referrer_name: "M. Trops"
 )
-primaire.save!
+elementaire.save!
 
 college = School.new(
-  name: "Collège Juliette Recamier",
+  name: "Collège Jules Verne",
   email: "col@school.com",
   password: "123456",
   address: "57 rue de la charité, Lyon",
@@ -77,35 +77,53 @@ gs = Classroom.new(
   )
 gs.save!
 
+ps = Classroom.new(
+  name: "Petite Section",
+  school: maternellea,
+)
+ps.save!
+
+ms = Classroom.new(
+  name: "Moyenne Section",
+  school: maternellea,
+)
+ms.save!
+
+gs = Classroom.new(
+  name: "Grande Section",
+  school: maternellea,
+  )
+gs.save!
+
 cp = Classroom.new(
   name: "CP",
-  school: primaire,
+  school: elementaire,
 )
 cp.save!
 
-ce1 = Classroom.new(
+ceun = Classroom.new(
   name: "CE 1",
-  school: primaire,
+  school: elementaire,
 )
-ce1.save!
+ceun.save!
 
-ce2 = Classroom.new(
+cedeux = Classroom.new(
   name: "CE 2",
-  school: primaire,
+  school: elementaire,
 )
-ce2.save!
+cedeux.save!
 
-cm1 = Classroom.new(
+cmun = Classroom.new(
   name: "CM 1",
-  school: primaire,
+  school: elementaire,
 )
-cm1.save!
+cmun.save!
 
-cm2 = Classroom.new(
+cmdeux = Classroom.new(
   name: "CM 2",
-  school: primaire,
+  school: elementaire,
 )
-cm2.save!
+cmdeux.save!
 
 sixieme = Classroom.new(
   name: "6 ème",
