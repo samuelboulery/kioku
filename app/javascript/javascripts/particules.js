@@ -1,3 +1,6 @@
+console.log("je suis ici")
+console.log(document.querySelector('#particles-js'))
+
 particlesJS("particles-js",{
     "particles":{
         "number":{
@@ -10,7 +13,7 @@ particlesJS("particles-js",{
         },
         "shape":{
             "type":["circle","triangle", "edge"],"stroke":{
-                "width":2,"color":"#ffffff"
+                "width":2,"colx²or":"#ffffff"
             },
             "polygon":{
                 "nb_sides":4
