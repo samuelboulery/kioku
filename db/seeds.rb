@@ -16,8 +16,8 @@ maternelle = School.new(
   password: "123456",
   address: "41 rue Tête d'Or, Lyon",
   photographer: paul,
-  category: 'maternelle'
-  phone_number: "04.78.64.25.05"
+  category: 'maternelle',
+  phone_number: "04.78.64.25.05",
   referrer_name: "M. Seeds"
 )
 maternelle.save!
@@ -28,8 +28,8 @@ primaire = School.new(
   password: "123456",
   address: "83 rue Bossuet, Lyon",
   photographer: paul,
-  category: 'elementaire'
-  phone_number: "04.78.64.25.07"
+  category: 'elementaire',
+  phone_number: "04.78.64.25.07",
   referrer_name: "M. Trops"
 )
 primaire.save!
@@ -40,8 +40,8 @@ college = School.new(
   password: "123456",
   address: "14 Rue du Maréchal de Lattre de Tassigny, Lyon",
   photographer: paul,
-  category: 'college'
-  phone_number: "04.78.64.25.06"
+  category: 'college',
+  phone_number: "04.78.64.25.06",
   referrer_name: "M. Philip"
 )
 college.save!
@@ -53,8 +53,8 @@ maternelle = School.new(
   password: "123456",
   address: "12 rue Crillon, Lyon",
   photographer: paul,
-  category: 'maternelle'
-  phone_number: "04.78.64.25.10"
+  category: 'maternelle',
+  phone_number: "04.78.64.25.10",
   referrer_name: "M. Dupond"
 )
 maternelle.save!
