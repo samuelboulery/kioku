@@ -3,7 +3,7 @@ School.destroy_all
 
 paul = Photographer.new(
   fullname: "Paul Aroïd",
-  email: "aroidpaul364",
+  email: "aroidpaul364@gmail.com",
   password: "Photo364",
   phone_number: "06.21.43.65.98"
 )
@@ -49,7 +49,7 @@ college.save!
 
 maternelle = School.new(
   name: "Ecole Jean Racine",
-  email: "mat@school.com",
+  email: "mat1@school.com",
   password: "123456",
   address: "12 rue Crillon, Lyon",
   photographer: paul,
