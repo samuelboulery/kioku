@@ -4,9 +4,9 @@
     <%= image_tag("logo.svg", class:"w-12") %>
   </div>
   <% if current_photographer %>
-    <%= button_to "Log out", signout_photographer_path, method: :delete, class: "button-logout" %>
+    <%= button_to "Deconnexion", signout_photographer_path, method: :delete, class: "button-logout" %>
   <% else %>
-    <%= button_to "Log out", signout_school_path, method: :delete, class: "button-logout" %>
+    <%= button_to "Deconnexion", signout_school_path, method: :delete, class: "button-logout" %>
   <% end %>
 </div>
 <% end %>
