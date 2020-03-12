@@ -25,7 +25,9 @@
         <% if photo.photo_type %>
           <%= cl_image_tag photo.file.key, :transformation=>[
           {:width=>248, :height=>165, :crop=>"fill"},
-          {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:40", :opacity=>80, :width=>0.2,}] %>
+          {:effect=>"pixelate_faces:7"},
+          {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:40", :opacity=>80, :width=>0.2,}
+          ] %>
         <% end %>
       <% end %>
     </div>
@@ -36,7 +38,9 @@
         <% if !photo.photo_type %>
           <%= cl_image_tag photo.file.key, :transformation=>[
           {:width=>165, :height=>248, :crop=>"fill"},
-          {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:40", :opacity=>80, :width=>0.2,}] %>
+          {:effect=>"pixelate_faces:7"},
+          {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:40", :opacity=>80, :width=>0.2,}
+          ] %>
         <% end %>
       <% end %>
     </div>
