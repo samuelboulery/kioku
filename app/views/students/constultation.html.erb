@@ -7,15 +7,17 @@
       <% if photo.photo_type %>
         <p>Photo de Groupe</p>
         <%= cl_image_tag photo.file.key, :transformation=>[
-  {:width=>200, :height=>300, :crop=>"fill"},
-  {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:20", :opacity=>100, :width=>0.3,}
-  ] %>
+          {:width=>248, :height=>165, :crop=>"fill"},
+          {:effect=>"pixelate_faces:7"},
+          {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:40", :opacity=>80, :width=>0.2,}
+          ] %>
         <p>Photos Individuelles</p>
       <% else %>
         <%= cl_image_tag photo.file.key, :transformation=>[
-  {:width=>200, :height=>300, :crop=>"fill"},
-  {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:20", :opacity=>100, :width=>0.3,}
-  ] %>
+          {:width=>165, :height=>248, :crop=>"fill"},
+          {:effect=>"pixelate_faces:7"},
+          {:overlay=>"kioku_watermark_vhbs35", :effect=>"brightness:40", :opacity=>80, :width=>0.2,}
+          ] %>
       <% end %>
     <% end %>
   <% else %>

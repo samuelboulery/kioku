@@ -1,75 +1,77 @@
 <div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner relative">
   <div class="title-banner"> 
-    <h1>School's Dashboard</h1>
-    <h2>Manage your classrooms folder below</h2>
+    <h1>Tableau de bord de votre école</h1>
+    <h2>Gérez les dossiers de vos classes</h2>
   </div>
   <div id="particles-js"></div>
-</div>
 
 <div class="flex absolute right-0 mr-48">
     <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 w-full" style="margin-top: -145px">
       <div class="px-12 pt-6 pb-10">
-        <div class="text-4xl text-purple h-8">School</div>
-        <div class="font-bold text-4xl text-purple pb-8 border-b-2"><%= @school.name %></div>
-        <div class="flex py-3 font-bold text-lg justify-start pt-4">Address:</div>
+        <div class="font-bold text-4xl text-purple pb-4 border-b-2"><%= @school.name %></div>
+        <div class="flex py-3 font-bold text-lg justify-start pt-4">Adresse:</div>
           <div class="flex justify-between">
             <div class="flex justify-start">
               <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.address %></p>
             </div>
           </div>
         <div class="flex py-3 font-bold text-lg justify-start pt-4">Contact:</div>
-          <div class="flex justify-between">
-            <div class="flex justify-start">
-              <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.email %></p>
-            </div>
+          <div class="flex justify-start">
+              <div class="pt-3 text-lg text-gray-500 pb-4"><%= @school.email %></div>
+              <div class="pt-3 text-lg text-gray-500 pb-4"><%= @school.phone_number %></div>
+              <div class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.referrer_name %></div>
           </div>
+        </div>
     </div>
   </div>
-</div>
-<div class="absolute right-0 mt-64">
-  <% if @school.uploads? %>
-    <%= link_to professional_school_path(@school), method: :patch do %>
-      <button class="btn btn-pink mt-8 w-64" style="margin-right: 205px"> Send pictures</button>
-    <% end %>
-  <% end %>
 </div>
 
   <div class="absolute left-0 mt-8">
     <%= link_to professional_schools_path do %>
-    <p class= "text-xl text-purple font-bold h-8 mt-4" style="margin-left: 55px">Back to the list</p>
+    <p class= "text-xl text-purple font-bold h-8 mt-4" style="margin-left: 55px">Retour aux écoles</p>
     <% end %>
   </div>
+<br>
+<br>
 
+
+<div class="absolute right-0 mt-64 mr-4">
+  <% if @school.uploads? %>
+    <%= link_to professional_school_path(@school), method: :patch do %>
+      <button class="btn btn-pink mt-8 px-16" style="margin-right: 225px"> Envoyer vos photos</button>
+    <% end %>
+  <% end %>
+</div>
 
 <div id="modal-container">
   <div class="modal-background">
     <div class="modal">
       <div class="content-modal">
-        <h1>Add a new classroom</h1>
+        <h1>Ajouter une nouvelle classe</h1>
         <%= form_for ([:professional, @school, @classroom]), html: {id: "drag"} do |f| %>
         <div class="label-container">
-          <%= f.text_field :name , value:'New classroom' %>
+          <%= f.text_field :name , value:'Nouvelle classe' %>
         </div>
         <div class="label group">
-          <%= f.label :gphoto, 'Group Photo' %>
+          <%= f.label :gphoto, 'Photo de groupe' %>
           <div class="dragndrop-form">
-            <p class="inactive"><strong>Add or drop</strong> a group picture here</p>
+            <p class="inactive"><strong>Ajoutez ou déposez</strong> une photo de classe ici</p>
           </div>
           <%= f.file_field :gphoto, direct_upload: true %>
           <div class="files"></div>
         </div>
 
         <div class="label individual">
-          <%= f.label :photos, 'Individual Photos' %>
+          <%= f.label :photos, 'Photos individuelles' %>
           <div class="dragndrop-form">
-            <p class="inactive"><strong>Add or drop</strong> some individuals pictures here</p>
+            <p class="inactive"><strong>Ajoutez ou deposez</strong> les photos individuelles ici</p>
           </div>
             <%= f.file_field :photos, multiple: true, direct_upload: true %>
           <div class="files"></div>
         </div>
         <div id="buttons-container">
           <a class="cancel" href="#"><p>Cancel</p></a>
-          <%= f.submit 'Create new classroom', class:'dng-btn' %>
+          <%= f.submit 'Créez une nouvelle classe', class:'dng-btn' %>
         </div>
         <% end %>
         <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
@@ -80,7 +82,7 @@
   </div>
 </div>
 
-<div class="containbox">
+<div class="containbox", style="margin-top: -55px">
   <div class="addfolder button" id="test" >
     <%= image_tag("add_folder.svg") %>
   </div>
@@ -102,9 +104,3 @@
 
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <!-- stats.js lib -->
-
-
-
-
-
-

@@ -3,7 +3,7 @@ School.destroy_all
 
 paul = Photographer.new(
   fullname: "Paul Aroïd",
-  email: "aroidpaul364",
+  email: "aroidpaul364@gmail.com",
   password: "Photo364",
   phone_number: "06.21.43.65.98"
 )
@@ -35,10 +35,10 @@ primaire = School.new(
 primaire.save!
 
 college = School.new(
-  name: "Jean Perrin",
+  name: "Collège Juliette Recamier",
   email: "col@school.com",
   password: "123456",
-  address: "14 Rue du Maréchal de Lattre de Tassigny, Lyon",
+  address: "57 rue de la charité, Lyon",
   photographer: paul,
   category: 'college',
   phone_number: "04.78.64.25.06",
@@ -49,7 +49,7 @@ college.save!
 
 maternelle = School.new(
   name: "Ecole Jean Racine",
-  email: "mat@school.com",
+  email: "mat1@school.com",
   password: "123456",
   address: "12 rue Crillon, Lyon",
   photographer: paul,
