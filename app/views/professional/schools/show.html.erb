@@ -1,7 +1,8 @@
+
 <div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner relative">
   <div class="title-banner">
-    <h1>Tableau de bord de votre école</h1>
-    <h2>Gérez les dossiers de vos classes</h2>
+    <h1>Tableau de bord de l'école</h1>
+    <h2>Gérez les dossiers des classes</h2>
   </div>
   <div id="particles-js"></div>
 
@@ -55,7 +56,7 @@
         <div class="label group">
           <%= f.label :gphoto, 'Photo de groupe' %>
           <div class="dragndrop-form">
-            <p class="inactive"><strong>Ajoutez ou déposez</strong> une photo de classe ici</p>
+            <p class="inactive"><strong>Ajouter ou déposer</strong> une photo de classe ici</p>
           </div>
           <%= f.file_field :gphoto, direct_upload: true %>
           <div class="files"></div>
@@ -64,14 +65,14 @@
         <div class="label individual">
           <%= f.label :photos, 'Photos individuelles' %>
           <div class="dragndrop-form">
-            <p class="inactive"><strong>Ajoutez ou deposez</strong> les photos individuelles ici</p>
+            <p class="inactive"><strong>Ajouter ou depose</strong> les photos individuelles ici</p>
           </div>
             <%= f.file_field :photos, multiple: true, direct_upload: true %>
           <div class="files"></div>
         </div>
         <div id="buttons-container">
-          <a class="cancel" href="#"><p>Cancel</p></a>
-          <%= f.submit 'Créez une nouvelle classe', class:'dng-btn' %>
+          <a class="cancel" href="#"><p>Annuler</p></a>
+          <%= f.submit 'Créer une nouvelle classe', class:'dng-btn' %>
         </div>
         <% end %>
         <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">

@@ -1,25 +1,25 @@
 <div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
   <h1><%= @classroom.name %></h1>
   <% if @classroom.photos.exists? %>
-  <h2><%= @classroom.photos.count %> pictures</h2>
+  <h2><%= @classroom.photos.count %> photos</h2>
   <% else %>
-  <h2>No pictures yet</h2>
+  <h2>Vide</h2>
   <% end %>
 </div>
 
 <div class="container-show">
   <div class="links back">
     <%= link_to professional_school_path(@classroom.school_id) do %>
-      <p class="text-xl text-purple h-8 mt-4 font-bold">Back to the list</p>
+      <p class="text-xl text-purple h-8 mt-4 font-bold">Retour aux écoles</p>
     <% end %>
   </div>
   <div class="links">
   <%= link_to edit_professional_classroom_path(@classroom.id) do %>
-  <p class="btn btn-pink">Edit this classroom</p>
+  <p class="btn btn-pink">Editer cette classe</p>
   <% end %>
 </div>
   <% if @classroom.photos.exists? %>
-  <h2 class="title grp">Group picture</h2>
+  <h2 class="title grp">Photo de groupe</h2>
   <div class="container-grp">
       <% @classroom.photos.each do |photo| %>
         <% if photo.photo_type %>
@@ -32,7 +32,7 @@
       <% end %>
     </div>
 
-    <h2 class="title ind">Individual pictures</h2>
+    <h2 class="title ind">Photos individuelles</h2>
     <div class="container-ind">
       <% @classroom.photos.each do |photo| %>
         <% if !photo.photo_type %>
