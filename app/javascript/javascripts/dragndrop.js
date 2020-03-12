@@ -22,11 +22,12 @@ window.addEventListener("DOMContentLoaded", () => {
         element.querySelector('.dragndrop-form > p').classList.add('inactive');
         // filenameContainer.innerText = fileInput.files.split('\\').pop();
         console.log(files);
+        filenameContainer.innerHTML = ""
         for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        console.log(file.name);
-        filenameContainer.insertAdjacentHTML("beforeend", `<p>${file.name}</p>`);
-      }
+          var file = files[i];
+          console.log(file.name);
+          filenameContainer.insertAdjacentHTML("beforeend", `<p>${file.name}</p>`);
+        }
 
     });
 
