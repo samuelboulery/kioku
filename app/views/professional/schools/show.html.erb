@@ -1,7 +1,9 @@
-<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
-  <h1>Tableau de bord de votre école</h1>
-  <h2>Gérez les dossiers de vos classes</h2>
-</div>
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner relative">
+  <div class="title-banner"> 
+    <h1>Tableau de bord de votre école</h1>
+    <h2>Gérez les dossiers de vos classes</h2>
+  </div>
+  <div id="particles-js"></div>
 
 <div class="flex absolute right-0 mr-48">
     <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 w-full" style="margin-top: -145px">
@@ -99,3 +101,6 @@
       <% end %>
     <% end %>
 </div>
+
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- stats.js lib -->
