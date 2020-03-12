@@ -1,5 +1,5 @@
 .navbar {
-  @apply w-full h-10 flex justify-between items-center
+  @apply w-full h-10 flex justify-between items-center absolute z-10
  }
 
 .logout {
@@ -7,5 +7,5 @@
  }
 
 .logo {
-  @apply bg-purple w-56 h-full flex justify-center items-center
+  @apply bg-purple w-64 h-full flex justify-center mt-4 items-center
  }
