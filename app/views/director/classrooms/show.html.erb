@@ -19,7 +19,7 @@
               <%= cl_image_tag(photo.file.key,
                   transformation: [
                     { width: 200, height: 200, crop: "fill" },
-                    { effect: "pixelate_faces:7" }
+                    { effect: "pixelate_faces:7" },
                     { overlay: "kioku_watermark_vhbs35", effect: "brightness:20", opacity: 100, width: 0.3 }
                   ],
                   class: 'object-contain'
