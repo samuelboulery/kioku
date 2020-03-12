@@ -3,19 +3,19 @@
   <h2>Gérez les dossiers de vos classes</h2>
 </div>
 
-<div class="flex absolute right-0 mr-48">
+<div class="flex absolute right-0 mr-40">
     <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 w-full" style="margin-top: -145px">
       <div class="px-12 pt-6 pb-10">
         <div class="font-bold text-4xl text-purple pb-4 border-b-2"><%= @school.name %></div>
         <div class="flex py-3 font-bold text-lg justify-start pt-4">Adresse:</div>
           <div class="flex justify-between">
             <div class="flex justify-start">
-              <p class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.address %></p>
+              <p class="text-lg text-gray-500 pb-4 border-b-2"><%= @school.address %></p>
             </div>
           </div>
         <div class="flex py-3 font-bold text-lg justify-start pt-4">Contact:</div>
           <div class="flex justify-start">
-              <div class="pt-3 text-lg text-gray-500 pb-4"><%= @school.email %></div>
+              <div class="text-lg text-gray-500 pb-4"><%= @school.email %></div>
               <div class="pt-3 text-lg text-gray-500 pb-4"><%= @school.phone_number %></div>
               <div class="pt-3 text-lg text-gray-500 pb-4 border-b-2"><%= @school.referrer_name %></div>
           </div>
@@ -26,17 +26,17 @@
 
   <div class="absolute left-0 mt-8">
     <%= link_to professional_schools_path do %>
-    <p class= "text-xl text-purple font-bold h-8 mt-4" style="margin-left: 55px">Retour aux écoles</p>
+    <p class= "text-xl text-purple font-bold h-8 mt-4 ml-16">Retour aux écoles</p>
     <% end %>
   </div>
 <br>
 <br>
 
 
-<div class="absolute right-0 mt-64 mr-4">
+<div class="absolute right-0 mt-64">
   <% if @school.uploads? %>
     <%= link_to professional_school_path(@school), method: :patch do %>
-      <button class="btn btn-pink mt-8 px-16" style="margin-right: 225px"> Envoyer vos photos</button>
+      <button class="btn btn-pink mt-8 px-16", style="margin-right: 175px"> Envoyer vos photos</button>
     <% end %>
   <% end %>
 </div>
@@ -91,9 +91,9 @@
             <p class="font-bold text-black text-sm pl-4" style="margin-top: -40%"><%= classroom.name %></p>
 
           <% if classroom.photos.exists? %>
-            <h2 class="text-sm text-gray-500 pl-4"><%= classroom.photos.count %> pictures</h2>
+            <h2 class="text-sm text-gray-500 pl-4"><%= classroom.photos.count %> photos</h2>
           <% else %>
-            <h2 class="text-sm text-gray-500 pl-4">No pictures</h2>
+            <h2 class="text-sm text-gray-500 pl-4">Vide</h2>
           <% end %>
         </div>
       <% end %>
