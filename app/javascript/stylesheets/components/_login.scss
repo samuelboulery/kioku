@@ -1,3 +1,4 @@
+
 // Container ----------------------
 .full-container{
   height: 100vh;
@@ -55,17 +56,17 @@
   input {
       background-color: #fff;
       border: none;
-      padding: 1% 5%;
+      padding: 3% 5%;
       margin: 0.4em 0 1em 0;
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 0.5em 0.25em rgba(0,0,0, 0.05);
+    //   border-radius: 10px;
+    //   box-shadow: 0 0 0.5em 0.25em rgba(0,0,0, 0.05);
   }
 
   button {
       border-radius: 10px;
-      background-color: #fff;
-      color: #FB4953;
+      background-color: #FB4953;
+      color: #fff;
       font-size: 12px;
       font-weight: bold;
       padding: 12px 45px;
@@ -195,4 +196,9 @@
 
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);
+}
+
+
+.forced{
+    margin: 0 0 0 1% !important;
 }
