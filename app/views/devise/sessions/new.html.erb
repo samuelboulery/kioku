@@ -6,25 +6,25 @@
     <div class="form-container photographer-container">
       <%= form_for(photographer, as: :photographer, url: session_path(:photographer)) do |f| %>
       <!-- <div class="form"> -->
-        <h1>Sign in photographer</h1>
+        <h1>Se connecter</h1>
 
         <div class="form-inputs">
-          <%= f.label :email %><br>
+          <%= f.label :Email %><br>
           <%= f.text_field :email, required: false, autofocus: true, class: "shadow-lg" %>
-          <%= f.label :password %><br>
+          <%= f.label :"Mot de passe" %><br>
           <%= f.password_field :password, required: false, class: "shadow-lg" %>
           <%# <%= f.check_box :remember_me, as: :boolean if Devise.mappings[:photographer].rememberable? %>
         </div>
 
         <div class="flex bg-white h-10 w-56 rounded-md shadow-lg mt-6 justify-center">
-          <%= f.button "Log in" %>
+          <%= f.button "Se connecter" %>
         </div>
 
         <div class="flex bg-white h-10 w-56 rounded-md shadow-lg items-center mt-6">
           <%= link_to photographer_google_oauth2_omniauth_authorize_path do %>
-            <div class="flex pl-4 items-center">
+            <div class="flex pl-2 items-center">
               <%= image_tag("google.svg") %>
-              <p class="pl-4 text-black pt-3"> Sign in with Google</p>
+              <p class="pl-4 text-black pt-3"> Se connecter avec Google</p>
             </div>
           <% end %>
         </div>
@@ -41,17 +41,17 @@
       <div class="form-container school-container">
         <%= form_for(school, as: :school, url: session_path(:school), class: "form") do |f| %>
         <!-- <div class="form"> -->
-          <h1>Sign in <br> school</h1>
+          <h1>Se connecter</h1>
           <div class="form-inputs">
-            <%= f.label :email %><br>
+            <%= f.label :Email %><br>
             <%= f.text_field :email, required: false, autofocus: true, class: "shadow-lg" %>
-            <%= f.label :password %><br>
+            <%= f.label :"Mot de passe" %><br>
             <%= f.password_field :password, required: false, class: "shadow-lg" %>
             <%# <%= f.check_box :remember_me, as: :boolean if Devise.mappings[:school].rememberable? %>
           </div>
 
           <div class="flex bg-white h-10 w-56 rounded-md shadow-lg mt-6 justify-center">
-            <%= f.button "Log in" %>
+            <%= f.button "Se connecter" %>
           </div>
           <!-- </div> -->
           <% end %>
@@ -60,17 +60,17 @@
           <div class="overlay">
 
             <div class="overlay-panel overlay-right">
-              <h1>Hey, <br>photographer!</h1>
+              <h1>Bienvenue <br> ami photographe!</h1>
               <p>
-                Login to send your wonderfull pictures
+                Connectez vous pour envoyer vos magnifiques photos!
               </p>
-              <p class="change">Are you a school ? <a href="#" id="photographer">Click here</a></p>
+              <p class="change">Vous êtes une école ? <a href="#" id="photographer">Cliquez ici</a></p>
             </div>
 
             <div class="overlay-panel overlay-left">
               <h1>Hello, <br>School</h1>
-              <p>Login to see your amazing students pictures</p>
-              <p class="change">Are you a photographer ? <a href="#" id="school">Click here</a></p>
+              <p>Connectez vous pour voir les superbes photos de vos élèves !</p>
+              <p class="change">Vous êtes photographe ? <a href="#" id="school">Cliquez ici</a></p>
             </div>
 
           </div>

@@ -35,10 +35,10 @@ primaire = School.new(
 primaire.save!
 
 college = School.new(
-  name: "Jean Perrin",
+  name: "Collège Juliette Recamier",
   email: "col@school.com",
   password: "123456",
-  address: "14 Rue du Maréchal de Lattre de Tassigny, Lyon",
+  address: "57 rue de la charité, Lyon",
   photographer: paul,
   category: 'college',
   phone_number: "04.78.64.25.06",
