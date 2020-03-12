@@ -13,7 +13,7 @@ particlesJS("particles-js",{
         },
         "shape":{
             "type":["circle","triangle", "edge"],"stroke":{
-                "width":2,"colx²or":"#ffffff"
+                "width":2,"color":"#ffffff"
             },
             "polygon":{
                 "nb_sides":4
