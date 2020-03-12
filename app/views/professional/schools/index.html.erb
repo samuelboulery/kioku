@@ -79,14 +79,14 @@
       <%= link_to professional_school_path(school.id) do %>
       <div class="flex items-center justify-between border-b-2 px-4 py-8">
 
-          <div class="p-3 rounded-md shadow-md"><%= image_tag("#{school.status}.svg", class:'w-8') %></div>
+          <div class="p-3 rounded-md shadow-md"><%= image_tag("#{school.status.downcase}.svg", class:'w-8') %></div>
 
           <div class="font-bold"><%= school.name %></div>
           <div class="text-gray-500 w-36"><p><%= school.address %></p></div>
 
           <!-- Statut notification -->
           <div>
-            <div class="status light-<%= school.status %>">
+            <div class="status light-<%= school.status %>" aria-label="<%= school_aria_label(school.status) %>" data-balloon-pos="up">
             <div class="pastille <%= school.status %>"></div>
               <p><%= school.status %></p>
             </div>

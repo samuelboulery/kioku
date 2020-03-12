@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_083644) do
+ActiveRecord::Schema.define(version: 2020_03_12_132043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_083644) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.string "category"
-    t.string "status", default: "Uploads"
+    t.string "status", default: "Chargement"
     t.string "phone_number"
     t.string "referrer_name"
     t.index ["email"], name: "index_schools_on_email", unique: true

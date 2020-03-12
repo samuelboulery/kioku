@@ -1,6 +1,6 @@
 .status {
   border-radius: 10px;
-  width: 7em;
+  width: 8em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,46 +8,46 @@
 }
 
 .pastille {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background-color: white;
 
 }
 
-.uploads {
+.chargement {
 background-color: #FB4953;
 }
 
-.validation {
+.association {
 background-color:  #FEC957;
 
 }
 
-.validated {
+.ok {
 background-color: #65F1E4;
 
 }
 
-.nothing {
+.clos {
   background-color: #7D07F2;
 }
 
-.light-uploads {
+.light-chargement {
 background-color: #FFEDEE;
 }
 
-.light-validation {
+.light-association {
 background-color:  #FFFAEE;
 
 }
 
-.light-validated {
+.light-ok {
 background-color: #F0FEFC;
 
 }
 
-.light-nothing {
+.light-clos {
   background-color: #F2E6FE;
 }
 
