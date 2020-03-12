@@ -83,14 +83,14 @@
   </div>
     <% @school.classrooms.each do |classroom| %>
       <%= link_to professional_classroom_path(classroom.id) do %>
-        <div class="folder-svg shadow-xl rounded-md h-32">
+        <div class="folder-svg shadow-xl rounded-md w-full">
           <%= render "shared/folder_svg", color: ["purple", "green", "yellow", "red"].sample %>
-            <p class="flex font-bold text-black m pl-5" style="margin-top: -35%"><%= classroom.name %></p>
+            <p class="font-bold text-black text-sm pl-4" style="margin-top: -40%"><%= classroom.name %></p>
 
           <% if classroom.photos.exists? %>
-            <h2 class="flex text-md text-gray-500 pl-5"><%= classroom.photos.count %> pictures</h2>
+            <h2 class="text-sm text-gray-500 pl-4"><%= classroom.photos.count %> pictures</h2>
           <% else %>
-            <h2 class="flex text-md text-gray-500 pl-5">No pictures</h2>
+            <h2 class="text-sm text-gray-500 pl-4">No pictures</h2>
           <% end %>
         </div>
       <% end %>
