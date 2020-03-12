@@ -1,7 +1,7 @@
 <!-- Banner -->
 <div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner relative">
   <div class="title-banner w-4/5">
-    <h1>Tableau de bord des écoles</h1>
+    <h1>Tableau de bord de vos écoles</h1>
     <div class="search">
       <%= form_tag(professional_schools_path, method: "get") do %>
       <%= text_field_tag :name, params[:name], class:"w-1/2 rounded-bl-md rounded-tl-md h-10" %>
@@ -17,7 +17,7 @@
   <div class="w-2/12 py-12 pl-12">
     <div class="flex text-left">
       <div>
-        <p class="pb-2 text-sm">Entrer un email pour inviter une école:</p>
+        <p class="pb-2 text-sm">Entrez un email pour inviter une école:</p>
         <%= form_for(:school, url: professional_schools_invite_path) do |f| %>
           <%= f.text_field :email, class:'bg-gray-200 w-full appearance-none border-2 border-gray-200 rounded-md w-5/6 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple mb-5', placeholder: "Email de l'école"%>
           <%= f.button 'Envoyer une invitation', class:'btn btn-pink w-full text-sm mb-16' %>
@@ -106,30 +106,30 @@
           <div class="font-bold text-4xl text-purple pb-2 border-b-2"><%= current_photographer.fullname %></div>
             <div class="flex py-3 font-bold text-lg text-gray-500 justify-center">Mars</div>
               <div>
-                <div class="flex justify-start">
+                <div class="flex justify-end">
                   <p class="py-1 font-bold text-lg pr-1">2 456</p>
-                    <p class="pt-1 text-lg text-gray-500">€</p>
+                  <p class="pt-1 text-lg">€</p>
                 </div>
-                <div class="flex justify-start">
+                <div class="flex justify-between">
+                  <p class="pt-1 text-lg text-gray-500">élèves :</p>
                   <p class="py-1 font-bold text-lg">184</p>
-                  <p class="pt-1 text-lg text-gray-500 pl-1"> élèves</p>
                 </div>
               </div>
               <div class="pb-3 border-b-2">
-                <div class="flex justify-start">
-                  <p class="py-1 font-bold text-lg pr-1">12</p>
-                  <p class="pt-1 text-lg text-gray-500 pr-3">classes</p>
+                <div class="flex justify-between">
+                  <p class="pt-1 text-lg text-gray-500">classes :</p>
+                  <p class="py-1 font-bold text-lg">12</p>
                 </div>
-                <div class="flex justify-start">
+                <div class="flex justify-between">
+                  <p class="pt-1 text-lg text-gray-500">écoles :</p>
                   <p class="py-1 font-bold text-lg">4</p>
-                  <p class="pt-1 text-lg text-gray-500 pl-1">écoles</p>
                 </div>
               </div>
       </div>
     </div>
       <div class="max-w-xs rounded-lg overflow-y-auto h-64">
         <div class="px-10">
-          <p class="font-bold pb-2 text-xl pb-5">Prochains shootings</p>
+          <p class="font-bold pb-2 text-xl pb-5">Vos prochains shootings</p>
 
           <p>Ecole Croix-Rousse</p>
           <div class="flex justify-start">
