@@ -1,10 +1,10 @@
 <div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
-  <h1>Dashboard</h1>
-  <h2>Manage your classrooms folder below</h2>
+  <h1>Tableau de bord</h1>
+  <h2>Gérer les dossiers des classes</h2>
 </div>
 
 <%= link_to director_root_path do %>
-  <p class= "text-xl text-purple h-8 mt-4 font-bold pl-16">Back to the class manager</p>
+  <p class= "text-xl text-purple h-8 mt-4 font-bold pl-16">Retour aux classes</p>
   <% end %>
 
 <div class="flex" data-init-student-dnd>
@@ -26,7 +26,7 @@
                 )
               %>
               <div class="relative dnd-placeholder flex justify-center">
-                <p class="py-2 text-gray-800">Drag name here</p>
+                <p class="py-2 text-gray-800">Déposer le fichier ici</p>
               </div>
             </div>
             <% end %>
@@ -42,10 +42,10 @@
     <div class="text-center">
       <%= form_for(:director, url: import_director_classroom_path) do |f| %>
         <label class="bg-gray-100 border-dashed border-4 border-gray-400 relative rounded-sm h-32 shadow block mb-4" data-dropzone>
-          <span class="text-gray-800 flex justify-center pt-12" id="files">Cliquez ici pour charger votre fichier .csv</span>
+          <span class="text-gray-800 flex justify-center pt-12" id="files">Cliquer ici pour charger le fichier .csv</span>
           <%= f.file_field :csv, class: "left-0 top-0 opacity-0 bottom-0 absolute" %>
         </label>
-        <%= f.submit 'Valider votre fichier', class: "btn btn-pink px-16" %>
+        <%= f.submit 'Valider le fichier', class: "btn btn-pink px-16" %>
       <% end %>
     </div>
 
@@ -59,7 +59,7 @@
             <p class="font-bold py-2 pl-2 pr-5"><%= student.name %></p>
             <p class="email text-gray-500 pl-2 pr-5" style="margin-top: -10px"><%= student.email %></p>
             <span class="hidden close absolute top-0 bottom-0 right-0 pl-6">
-              <svg class="fill-current h-6 w-6 text-red" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+              <svg class="fill-current h-6 w-6 text-red" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Fermer</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
             </span>
           </div>
         <% end %>
