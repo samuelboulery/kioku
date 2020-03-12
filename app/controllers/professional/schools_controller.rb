@@ -16,13 +16,13 @@ class Professional::SchoolsController < Professional::ApplicationController
   end
 
   def update
-    if @school.nothing?
-      @school.uploads!
-    elsif @school.uploads?
-      @school.validation!
-    else @school.nothing!
+    if @school.chargement?
+      @school.association!
+    elsif @school.association?
+      @school.ok!
+    else @school.clos!
     end
-    redirect_to professional_root_path, notice: 'Status updated !'
+    redirect_to professional_root_path, notice: 'Statut modifié !'
   end
 
   private

@@ -88,7 +88,7 @@
           <div>
             <div class="status light-<%= school.status %>" aria-label="<%= school_aria_label(school.status) %>" data-balloon-pos="up">
             <div class="pastille <%= school.status %>"></div>
-              <p><%= school.status %></p>
+              <p><%= school.status.capitalize %></p>
             </div>
           </div>
 
@@ -111,19 +111,21 @@
                   <p class="pt-1 text-lg text-gray-500">Profits :</p>
                   <p class="py-1 font-bold text-lg pr-1">2 456 €</p>
                 </div>
+
                 <div class="flex justify-between">
                   <p class="pt-1 text-lg text-gray-500">Elèves :</p>
-                  <p class="py-1 font-bold text-lg">284</p>
+                  <p class="py-1 font-bold text-lg"><%= current_photographer.photos.count %></p>
                 </div>
               </div>
               <div class="pb-3 border-b-2">
                 <div class="flex justify-between">
                   <p class="pt-1 text-lg text-gray-500">Classes :</p>
-                  <p class="py-1 font-bold text-lg">12</p>
+                  <p class="py-1 font-bold text-lg"><%= current_photographer.classrooms.count %></p>
                 </div>
                 <div class="flex justify-between">
                   <p class="pt-1 text-lg text-gray-500">Ecoles :</p>
-                  <p class="py-1 font-bold text-lg">4</p>
+                  <p class="py-1 font-bold text-lg"><%= current_photographer.schools.count %></p>
+
                 </div>
               </div>
       </div>
