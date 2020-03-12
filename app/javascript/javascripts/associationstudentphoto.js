@@ -1,4 +1,5 @@
 const associationStudentPhoto = (event, studentId, photoId) => {
+  console.log("coucou");
  const student = {
     student_id: studentId,
     photo_id: photoId,
