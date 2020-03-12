@@ -1,3 +1,7 @@
+<% content_for :no_layout do %>
+  true
+<% end %>
+
 <div class="full-container">
   <% photographer = resource.is_a?(Photographer) ? resource : Photographer.new %>
   <% school = resource.is_a?(School) ? resource : School.new %>
