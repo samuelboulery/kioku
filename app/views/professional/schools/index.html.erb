@@ -1,12 +1,15 @@
 <!-- Banner -->
-<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
-  <h1>Tableau de bord de vos écoles</h1>
-  <div class="search">
-    <%= form_tag(professional_schools_path, method: "get") do %>
-    <%= text_field_tag :name, params[:name], class:"w-1/2 rounded-bl-md rounded-tl-md h-10" %>
-    <%= button_tag "Rechercher", class:"w-24 rounded-br-md rounded-tr-md h-10 bg-white text-red font-bold" %>
-    <% end %>
+<div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner relative">
+  <div class="title-banner w-full">
+    <h1>Tableau de bord de vos écoles</h1>
+    <div class="search">
+      <%= form_tag(professional_schools_path, method: "get") do %>
+      <%= text_field_tag :name, params[:name], class:"w-1/2 rounded-bl-md rounded-tl-md h-10" %>
+      <%= button_tag "Rechercher", class:"w-24 rounded-br-md rounded-tr-md h-10 bg-white text-red font-bold" %>
+      <% end %>
+    </div>
   </div>
+  <div id="particles-js"></div>
 </div>
 
 <!-- Invite form -->
@@ -97,7 +100,7 @@
 
 
   <div class="w-2/12">
-    <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 mb-8" style="margin-top: -125px">
+    <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 mb-8 relative" style="margin-top: -125px">
       <div class="px-10 pt-6 pb-10">
         <div class="text-4xl text-purple h-8 mb-2">Bonjour</div>
           <div class="font-bold text-4xl text-purple pb-2 border-b-2"><%= current_photographer.fullname %></div>
@@ -151,3 +154,6 @@
       <div class="w-1/12 h-12">
       </div>
 </div>
+
+<!-- TODO : METTRE LE TOOLTIP SUR LES BONS STATUS -->
+<!-- aria-label="En attente de chargement des photos" data-balloon-pos="up" -->
