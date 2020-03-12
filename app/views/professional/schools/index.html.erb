@@ -1,6 +1,6 @@
 <!-- Banner -->
 <div style="background-image: url('<%= image_path "banner.svg" %>');" class="banner">
-  <h1>School's Dashboard</h1>
+  <h1>Tableau de bord de vos écoles</h1>
   <div class="search">
     <%= form_tag(professional_schools_path, method: "get") do %>
     <%= text_field_tag :name, params[:name], class:"w-1/2 rounded-bl-md rounded-tl-md h-10" %>
@@ -14,7 +14,7 @@
   <div class="w-2/12 py-12 pl-12">
     <div class="flex text-left">
       <div>
-        <p class="pb-2 text-sm">Enter an email to invite a school:</p>
+        <p class="pb-2 text-sm">Entrer un email pour inviter une école:</p>
         <%= form_for(:school, url: professional_schools_invite_path) do |f| %>
           <%= f.text_field :email, class:'bg-gray-200 w-full appearance-none border-2 border-gray-200 rounded-md w-5/6 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple mb-5', placeholder: "School mail"%>
           <%= f.button 'Send an invitation', class:'btn btn-pink w-full text-sm mb-16' %>
