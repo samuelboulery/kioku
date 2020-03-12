@@ -2,46 +2,41 @@
   <h1>Tableau de bord des écoles</h1>
   <h2>Gérer les dossiers des classes</h2>
 </div>
-
 <div class="absolute right-0 mr-48">
-<div class="flex mx-auto ">
-  <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 " style="margin-top: -140px">
-    <div class="px-12 pt-6 pb-10">
-      <div class="font-bold text-4xl text-purple pb-8 border-b-2"><%= current_school.name %></div>
-      <div class="flex justify-between">
-        <div class="flex py-3 font-bold text-lg justify-start pt-3">Les profits :</div>
+  <div class="flex mx-auto ">
+    <div class="max-w-xs rounded-lg overflow-hidden shadow bg-white z-1 " style="margin-top: -140px">
+      <div class="px-12 pt-6 pb-10">
+        <div class="font-bold text-4xl text-purple pb-8 border-b-2"><%= current_school.name %>
+        </div>
+        <div class="flex justify-between">
+          <div class="flex py-3 font-bold text-lg justify-start pt-3">Les profits :
+          </div>
           <div class="flex justify-start">
             <p class="py-3 font-bold text-lg pr-1">0</p>
             <p class="pt-3 text-lg text-gray-500">€ </p>
           </div>
-      </div>
-          <div class=" border-b-2"></div>
-        <div class="flex justify-start py-3 font-bold text-lg pt-4"> Contact :</div>
-            <div class="flex justify-start">
-              <p class="text-lg text-gray-500"><%= current_school.photographer.fullname %></p>
-            </div>
-            <div class="flex justify-start">
-              <p class="text-lg text-gray-500 pb-6"><%= current_school.photographer.email %></p>
-              </div>
-              <div class=" border-b-2"></div>
-            </div>
-
         </div>
+        <div class=" border-b-2">
+        </div>
+        <div class="flex justify-start py-3 font-bold text-lg pt-4"> Contact :
+        </div>
+        <div class="flex justify-start">
+          <p class="text-lg text-gray-500"><%= current_school.photographer.fullname %></p>
+        </div>
+        <div class="flex justify-start">
+          <p class="text-lg text-gray-500 pb-6"><%= current_school.photographer.email %></p>
+        </div>
+        <div class=" border-b-2">
+        </div>
+      </div>
+    </div>
   </div>
-  <% if current_school.validation? %>
-<%= link_to director_update_path, method: :post do %> <!-- status to be changed -->
-  <button class= "btn btn-pink mt-6 px-8">Valider les classes</button>
+  <% if current_school.association? %>
+    <%= button_to director_update_path, method: :post do %> <!-- status to be changed -->
+      <button class="btn btn-pink mt-6 px-8">Valider les classes</button>
+    <% end %>
   <% end %>
-<% end %>
 </div>
-</div>
-
-
-
-
-
-
-
 <div class="containbox">
   <% @classrooms.each do |classroom| %>
     <%= link_to director_classroom_path(classroom.id) do %>
@@ -58,9 +53,3 @@
     <% end %>
   <% end %>
 </div>
-
-
-
-
-
-

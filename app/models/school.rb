@@ -9,12 +9,9 @@ class School < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum status: {
-    close: "Clos",
+    clos: "Clos",
     chargement: "Chargement",
     association: "Association",
     ok: "Ok"
   }
-
-
-
 end

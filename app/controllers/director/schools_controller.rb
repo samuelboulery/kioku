@@ -3,9 +3,9 @@ class Director::SchoolsController < Director::ApplicationController
     @classrooms = current_school.classrooms
   end
   def update
-    if current_school.validation?
-      current_school.validated!
+    if current_school.association?
+      current_school.ok!
     end
-    redirect_to director_root_path, notice: 'Status updated !'
+    redirect_to director_root_path, notice: 'Statut modifié !'
   end
 end
