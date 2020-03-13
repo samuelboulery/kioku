@@ -1,3 +1,7 @@
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
+
 const associationStudentPhoto = (event, studentId, photoId) => {
   console.log("coucou");
  const student = {
@@ -17,11 +21,22 @@ const associationStudentPhoto = (event, studentId, photoId) => {
     },
     body: JSON.stringify(student)
   })
-    // .then(response => response.json())
-    // .then((data) => {
-    //   console.log(data);
-    // });
+    .then((_r) => {
+      if (document.querySelector('#names').childElementCount == 0) {
+        Swal.fire({
+          title: 'Association terminée !',
+          showClass: {
+            popup: 'animated fadeInDown faster'
+          },
+          hideClass: {
+            popup: 'animated fadeOutUp faster'
+          },
+          customClass: {
+            confirmButton: 'btn-pink'
+          }
+        })
+      }
+    });
 };
-
 
 export { associationStudentPhoto };

@@ -1,9 +1,12 @@
   .btn-pink {
     @apply bg-red text-white;
   }
-  .btn-pink:hover {
+  .btn-pink:hover, .swal2-styled.swal2-confirm.btn-pink {
     @apply bg-red;
+    border: none;
   }
+
+
 
 
 // TO TEST IT IN HTML COPY/PASTE BELOW
