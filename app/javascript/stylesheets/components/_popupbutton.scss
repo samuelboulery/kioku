@@ -1,0 +1,9 @@
+.popup-button {
+  background: #fb4953;
+  color: white;
+  padding: 0.5em;
+  border-radius: 10px;
+  &:focus {
+    border: none;
+  }
+}

@@ -12,6 +12,7 @@
     "popper.js": "^1.16.1",
     "pretty-checkbox": "^3.0.3",
     "sortablejs": "^1.10.2",
+    "sweetalert2": "^9.10.0",
     "tailwindcss": "^1.2.0",
     "turbolinks": "^5.2.0"
   },
