@@ -1,12 +1,17 @@
-  .btn {
-    @apply font-bold py-2 px-10 rounded-lg;
-  }
+.btn {
+  @apply font-bold py-2 px-8 rounded-lg;
+}
 
 
-  .button-logout{
-    background-color: #7d07f2;
-    color: #fff;
-    margin-right: 2em;
-    padding: 0.5em;
-    // margin-top: 1em;
-  }
+.button-logout{
+  background-color: #7d07f2;
+  color: #fff;
+  margin-right: 2em;
+  padding: 0.5em;
+  // margin-top: 1em;
+}
+
+// .button-modal{
+//   display: none;
+//   // margin-top: 1em;
+// }
